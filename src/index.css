@@ -137,3 +137,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .launch-btn:hover {
   background-color: #794185;
 }
+
+.about {
+  text-align: center;
+}

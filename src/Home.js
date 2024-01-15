@@ -7,16 +7,16 @@ function Home() {
       <div className="container">
         <h1>Ready to practice?</h1>
         <div>
-        <button className="launch-btn" onClick={() => navigate('/Add')}>
+        <button className="launch-btn" onClick={() => navigate('/add')}>
             Addition
         </button>
-        <button className="launch-btn" onClick={() => navigate('/Multiply')}>
+        <button className="launch-btn" onClick={() => navigate('/multiply')}>
             Multiplication
         </button>
         </div>
         <h1>Want to learn more about Pulse?</h1>
-        <button className="launch-btn" onClick={() => navigate('/Faq')}>
-            Frequently Asked Questions
+        <button className="launch-btn" onClick={() => navigate('/about')}>
+            About
         </button>
       </div>
       
