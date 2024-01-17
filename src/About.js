@@ -38,7 +38,7 @@ function About() {
            each a decent chunk of the math facts, and it's good practice even if it's not perfectly targeted that day.
         </p>
         <h1>Who are you?</h1>
-        <p>My name is Dylan Kane. I'm a 7th grade math teacher in Colorado. You can get in touch at dkane47@gmail.com</p>
+        <p>My name is Dylan Kane. I'm a 7th grade math teacher in Colorado. You can get in touch at dkane47 at gmail</p>
         <h1>How do you use Pulse with your students?</h1>
         <p>I assign either Pulse Addition or Pulse Multiplication twice a week. I do some progress monitoring to 
           figure out which students should be focusing on addition and which on multiplication and use Google Classroom 
