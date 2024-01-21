@@ -3,13 +3,13 @@ import './App.css';
 
 const Add = () => {
   //state variables
-  //logic - sequence, step, operation
+  //logic - sequence, step, operation, key pieces for the logic of the app
   const [logic, setLogic] = React.useState({
     sequence: [
-      1, 2, 3, 4, 5, 6 //default sequence of fact families
+      1, 2, 3, 4, 5, 6, 7 //default sequence of fact families
     ],
     step: -1, //default step, will step forward to 0 to generate first problem
-    operation: 0 //begins with multiplication
+    operation: 0 //begins with addition
   });
   
   //problem - numbers, answer, startTime
@@ -18,10 +18,9 @@ const Add = () => {
     num2: 0, // Second number in the problem
     userAnswer: '', // User's answer to the problem
     startTime: 0 // Timestamp when the problem started
-    // Other problem-related settings can be added as needed
   });
   
-  //messages = message1, message2, countdown
+  //messages = message1, message2, countdown, moving verticall down the page
   const [messages, setMessages] = React.useState({
     message1: 'Solve it!', // Message to be displayed for the user, either a "Solve it!" prompt or a correction prompt after a mistake
     message2: 'Analyzing...', // Another message for the user, either "Analyzing" before entering practice mode or sharing the fact family in practice mode
@@ -31,21 +30,23 @@ const Add = () => {
   //displaysettings
   const [displaySettings, setDisplaySettings] = React.useState({
     showContent: false, // Determines whether to show the main content or introduction
-    totalProblems: 29, // Total number of problems the user will encounter
-    switch: false, // boolean signaling that a user got a question wrong, and should switch modes once corrected
-    switched: false // boolean signaling that practice mode has begun
+    totalProblems: 29, // Total number of problems the user will encounter. Issue - 29 produces 30 problems
+    switch: false, // boolean signaling whether a user got a question wrong, and should switch modes once corrected
+    switched: false // boolean signaling whether practice mode has begun
   });
   
+  //hold settings
   const [holdData, setHoldData] = React.useState({
-    hold: false, //hold a problem to repeat because the user got it wrong or answered slowly
+    hold: false, //hold a problem to repeat because the user got it wrong or answered slowly in practice mode
     held: [] //problem to repeat
   });
   
-  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false);
+  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false); //make level up animation visible
 
-  const [timeToTarget, setTimeToTarget] = React.useState(3500);
+  const [timeToTarget, setTimeToTarget] = React.useState(3500); //default time until answer is deemed too slow
 
   // Inside useEffect, add handleOperationChange to the dependency array:
+  //this starts the Level Up! animation
   React.useEffect(() => {
     if (logic.operation > 0) {
       setIsLevelUpVisible(true); // Make the message visible
@@ -53,14 +54,16 @@ const Add = () => {
   }, [logic.operation]);
 
   // Inside useEffect, add handleOperationChange to the dependency array:
+  //this makes sure not to repeat the Level Up! animation
   React.useEffect(() => {
     if (logic.step === 1) {
-      setIsLevelUpVisible(false); // Make the message visible
+      setIsLevelUpVisible(false); // Make the message invisible
     }
   }, [logic.step]);
   
+  //this function generates the next problem for the user to solve
   const generateProblem = () => {
-    //if practice mode, only step forward by 1
+    //if in practice mode, only step forward by 1 and don't change anything else
     if (displaySettings.switched) {
       setLogic((prevLogic) => ({
         ...prevLogic,
@@ -72,30 +75,31 @@ const Add = () => {
         step: 0,
         operation: prevLogic.operation + 1,
         sequence: [
-      7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7
+      7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7
     ]
       }));
       setTimeToTarget(prevTimeToTarget => prevTimeToTarget - 500);
-    } else if (logic.step >= 5) { //if operation is finished reset step and increment operation
+    } else if (logic.step >= 6) { //if operation is finished reset step and increment operation
       setLogic((prevLogic) => ({
         ...prevLogic,
         step: 0,
         operation: prevLogic.operation + 1,
         sequence: [
-      1, 2, 3, 4, 5, 6
+      1, 2, 3, 4, 5, 6, 7
     ]
       }));
       setTimeToTarget(prevTimeToTarget => prevTimeToTarget - 500);
     } else {
-      setLogic((prevLogic) => ({ //otherwise increment step
+      setLogic((prevLogic) => ({ //otherwise increment step (maybe a repeat?)
         ...prevLogic,
         step: prevLogic.step + 1
       }));
     }
     
+    //message settings
     if (displaySettings.switched) { //reset messages if counting down in practice mode
-      let problems;
-      if (displaySettings.totalProblems - logic.step === 1) {
+      let problems; //handles plural for problem/problems
+      if (displaySettings.totalProblems - logic.step === 1) { 
         problems = " problem";
       } else {
         problems = " problems";
@@ -135,6 +139,8 @@ const Add = () => {
     } else if (logic.step === 3) {
       target = "near doubles";
     } else if (logic.step === 4) {
+      target = "+0s";
+    } else if (logic.step === 5) {
       target = "3s and 4s";
     } else {
       target = "5s through 8s";
@@ -174,25 +180,28 @@ const Add = () => {
     
     if (type === 1) {
       newNum1 = 1;
-      newNum2 = Math.floor(Math.random() * 10 + 1);
+      newNum2 = Math.floor(Math.random() * 10 + 1);//1 and 1 through 10
     } else if (type === 2) {
       newNum1 = 2;
-      newNum2 = Math.floor(Math.random() * 9 + 2);
+      newNum2 = Math.floor(Math.random() * 9 + 2);//2 and 2 through 10
     } else if (type === 3) {
-      newNum1 = Math.floor(Math.random() * 8 + 3);
+      newNum1 = Math.floor(Math.random() * 8 + 3);//double, 3 through 10
       newNum2 = newNum1;
     } else if (type === 4) {
-      newNum1 = Math.floor(Math.random() * 7 + 3);
+      newNum1 = Math.floor(Math.random() * 7 + 3);//3 through 9 and num + 1
       newNum2 = newNum1 + 1;
     } else if (type === 5) {
+      newNum1 = 0;
+      newNum2 = Math.floor(Math.random() * 10 + 1);//0 and 1 through 10
+    } else if (type === 6) {
       newNum1 = Math.floor(Math.random() * 2 + 3);
       newNum2 = Math.floor(Math.random() * (6 + 3 - newNum1) + 5 + newNum1 - 3);
-    } else if (type === 6) {
+    } else if (type === 7) {
       newNum1 = Math.floor(Math.random() * 4 + 5);
       newNum2 = Math.floor(Math.random() * (4 + 5 - newNum1) + 7 + newNum1 - 5);
     } else {
       newNum1 = Math.floor(Math.random() * 98 + 2);
-      newNum2 = Math.floor(Math.random() * 98 + 2);
+      newNum2 = Math.floor(Math.random() * 28 + 2);
     }
     
     // if there is a held problem, set the problem to the held problem
@@ -235,7 +244,6 @@ const Add = () => {
   };
 
   const checkAnswer = () => {
-    //variable for speed
     // Calculate time difference in milliseconds
     const currentTime = Date.now();
     const timeTaken = currentTime - problem.startTime;
@@ -265,34 +273,35 @@ const Add = () => {
           generateProblem();
         } else if (tookMoreThanThreeSeconds && !displaySettings.switched) {//slow and analyzing mode
           targetedPractice();
-        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0 && logic.operation < 4) {
+        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0 && logic.operation < 4) {//took more than three seconds and pracice mode/even problem
           hold();
           generateProblem();
-        } else {
+        } else { //solved quickly, just generate a new problem
           generateProblem();
         }
         }, 500);
     } else { //conditionals if answer is wrong
       //incorrect answer message
-      setMessages((prevMessages) => ({
+      setMessages((prevMessages) => ({//set correction message
         ...prevMessages,
         message1: 'Nope, ' + problem.num1.toString() + " + " + problem.num2.toString() + " = " + ans.toString()
       }));
-      setProblem((prevProblem) => ({
+      setProblem((prevProblem) => ({//reset input
         ...prevProblem,
         userAnswer: ''
       }));
-      if (!displaySettings.switched) {
+      if (!displaySettings.switched) {//switch to pracice mode next
         setDisplaySettings((prevSettings) => ({
         ...prevSettings,
         switch: true
       }));
       } else if (displaySettings.switched && logic.step % 2 === 0 && logic.operation < 4) {
-        hold();
+        hold(); //repeat problem if it's practice mode/even problem
       }
     }
   };
 
+  //function for clicking the ready button
   const handleReadyClick = () => {
     generateProblem(); // Call the generateProblem function
     setDisplaySettings({
@@ -303,17 +312,17 @@ const Add = () => {
 
   return (
     <div className="app" id="app">
-      {isLevelUpVisible && (
+      {isLevelUpVisible && (//level up message
         <div className="level-up-message">
           Level Up!
         </div>
       )}
-      {logic.step <= displaySettings.totalProblems ? (
+      {logic.step <= displaySettings.totalProblems ? (//should we display content or ending message
         !displaySettings.showContent ? (
           <Introduction onReadyClick={handleReadyClick} /> //display intro text and button
         ) : (
           <ProblemDisplay //display problem and messages
-            operation={logic.operation} 
+            operation={logic.operation} //props
             num1={problem.num1}
             num2={problem.num2}
             userAnswer={problem.userAnswer}
@@ -333,7 +342,7 @@ const Add = () => {
   );
 };
 
-const Introduction = ({ onReadyClick }) => {
+const Introduction = ({ onReadyClick }) => { //introduction page with start button
   return (
     <div className="container">
       <h1>Welcome to Pulse: Addition</h1>
@@ -343,7 +352,7 @@ const Introduction = ({ onReadyClick }) => {
   );
 };
 
-const ProblemDisplay = ({
+const ProblemDisplay = ({//component that displays the meat of the app
     operation,
     num1,
     num2,
@@ -356,22 +365,22 @@ const ProblemDisplay = ({
   }) => {
   const ans = num1 + num2;
 
-  let displayEquation, result;
+  let displayEquation, result; //conditionals for displaying operation
   if (operation === 0 || operation === 4) {
     displayEquation = `${num1} + ${num2} = `;
     result = '';
   } else if (operation === 1) {
-    displayEquation = `${num1}  + `;
-    result = `= ${ans}`;
-  } else if (operation === 2) {
     displayEquation = `${ans} \u2013 ${num1} = `;
     result = '';
+  } else if (operation === 2) {
+    displayEquation = `${num1}  + `;
+    result = `= ${ans}`;
   } else {
     displayEquation = `${ans}  \u2013  `;
     result = ` = ${num1}`;
   }
 
-  return (
+  return (//display problem in three parts, then messages
     <div className="practice">
       <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
       </div>
