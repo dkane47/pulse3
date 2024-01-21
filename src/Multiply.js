@@ -334,11 +334,11 @@ const ProblemDisplay = ({
     displayEquation = `${num1} × ${num2} = `;
     result = '';
   } else if (operation === 1) {
-    displayEquation = `${num1} × `;
-    result = `= ${ans}`;
-  } else if (operation === 2) {
     displayEquation = `${ans} ÷ ${num1} = `;
     result = '';
+  } else if (operation === 2) {
+    displayEquation = `${num1} × `;
+    result = `= ${ans}`;
   } else {
     displayEquation = `${ans} ÷ `;
     result = ` = ${num1}`;
