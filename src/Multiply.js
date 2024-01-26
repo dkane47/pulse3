@@ -4,16 +4,16 @@ import './App.css';
 
 const Multiply = () => {
   //state variables
-  //logic - sequence, step, operation
+  //logic - sequence, step
   const [logic, setLogic] = React.useState({
     sequence: [//first number is the problem, 
-      [2,0], [2,0], [10,0], [5,0], [1,0], [0,0], [11,0], [4,0], [3,0], [6,0], [9,0], [8,0], [7,0], 
+      [2,0], [10,0], [5,0], [1,0], [0,0], [11,0], [4,0], [3,0], [6,0], [9,0], [8,0], [7,0], 
       [2,1], [10,1], [5,1], [1,1], [11,1], [4,1], [3,1], [6,1], [9,1], [8,1], [7,1],
       [2,2], [10,2], [5,2], [1,2], [11,2], [4,2], [3,2], [6,2], [9,2], [8,2], [7,2],
       [2,3], [10,3], [5,3], [1,3], [11,3], [4,3], [3,3], [6,3], [9,3], [8,3], [7,3],
       [12,0], [15,0], [16,0], [18,0], [21,0]
     ],
-    step: 0 //default step
+    step: -1 //default step
   });
   
   //problem - numbers, answer, startTime
@@ -35,7 +35,7 @@ const Multiply = () => {
   //displaysettings
   const [displaySettings, setDisplaySettings] = React.useState({
     showContent: false, // Determines whether to show the main content or introduction
-    totalProblems: 45, // Total number of problems the user will encounter
+    totalProblems: 44, // Total number of problems the user will encounter
     switch: false, // boolean signaling that a user got a question wrong, and should switch modes once corrected
     switched: false // boolean signaling that practice mode has begun
   });
@@ -51,7 +51,7 @@ const Multiply = () => {
   const timeToTarget = 3500;
 
   React.useEffect(() => {
-    if (logic.step % 12 === 0 && logic.step > 0 && !displaySettings.switched) {
+    if (logic.step % 11 === 1 && logic.step > 2 && !displaySettings.switched) {
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
@@ -60,6 +60,10 @@ const Multiply = () => {
 
   // Inside useEffect, add handleOperationChange to the dependency array:
   React.useEffect(() => {
+    if (logic.step === -1) {
+      return;
+    }
+    
     // pull first number from sequence
     let newNum1 = logic.sequence[logic.step][0];
     let op = logic.sequence[logic.step][1];

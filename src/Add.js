@@ -6,14 +6,14 @@ const Add = () => {
   //logic - sequence, step, operation
   const [logic, setLogic] = React.useState({
     sequence: [//first number is the problem, 
-      [0,0], [0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], 
+      [0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], 
       [0,1], [1,1], [2,1], [3,1], [4,1], [5,1], [6,1], 
       [0,2], [1,2], [2,2], [3,2], [4,2], [5,2], [6,2], 
       [0,3], [1,3], [2,3], [3,3], [4,3], [5,3], [6,3],
       [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], 
       [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0]
     ],
-    step: 0 //default step
+    step: -1 //default step
   });
   
   //problem - numbers, answer, startTime
@@ -35,7 +35,7 @@ const Add = () => {
   //displaysettings
   const [displaySettings, setDisplaySettings] = React.useState({
     showContent: false, // Determines whether to show the main content or introduction
-    totalProblems: 45, // Total number of problems the user will encounter
+    totalProblems: 44, // Total number of problems the user will encounter
     switch: false, // boolean signaling that a user got a question wrong, and should switch modes once corrected
     switched: false // boolean signaling that practice mode has begun
   });
@@ -60,6 +60,10 @@ const Add = () => {
 
   // Inside useEffect, add handleOperationChange to the dependency array:
   React.useEffect(() => {
+    if (logic.step === -1) {
+      return;
+    }
+    
     let newNum1;
     let newNum2;
     let op = logic.sequence[logic.step][1];
