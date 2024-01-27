@@ -385,7 +385,7 @@ const Input = ({ userAnswer, setUserAnswer, checkAnswer }) => {
   };
   
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === '=') {
       checkAnswer(); // Call checkAnswer when the Enter key is pressed
     }
   };

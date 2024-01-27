@@ -149,6 +149,11 @@ input[type="number"]::-webkit-inner-spin-button {
 .about {
   width: 600px;
   margin: 0 auto;
+  font-family: 'Open Sans', sans-serif; /* Or a suitable font for your website */
+  line-height: 1.5;
+  color: #333;
+  background-color:  #ADD8E6; /* Subtle background color */
+  border-radius: 10px;
 }
 
 .title {
