@@ -299,6 +299,7 @@ const Add = () => {
           <Introduction onReadyClick={handleReadyClick} /> //display intro text and button
         ) : (
           <ProblemDisplay //display problem and messages
+            className="mobile"
             operation={problem.operation} //props
             num1={problem.num1}
             num2={problem.num2}

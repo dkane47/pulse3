@@ -157,7 +157,9 @@ input[type="number"]::-webkit-inner-spin-button {
 } 
 
 @media only screen and (max-width: 768px) {
-  .practice {
+  .mobile {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
   }
 }
