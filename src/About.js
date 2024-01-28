@@ -6,20 +6,21 @@ function About() {
         <h1>What is Pulse?</h1>
         <p>How do you respond when a student doesn't know a math fact? 
           Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
-          Retrieval practice means retrieving something from memory, not just deriving it or repeating it to ourselves. 
-          Pulse is designed to figure out what a fact family students are having a hard time with. Then, students do some practice 
+          Retrieval practice means retrieving the thing from memory, not just deriving it or repeating it to ourselves. 
+          Pulse is designed to help students retrieve facts from memory. First, it figures out what fact family students are having a hard time with. 
+          Then, students do some practice 
           focused on that fact family. For any fact they don't know, either because they get it wrong or take time to figure it out, 
-          they practice that fact again a few questions later, and then again a few more questions after that. 
-          Over time, that retrieval practice will help students remember more and more of their math facts.
+          they practice that fact again a few questions later. 
+          Over time, retrieval practice will help students remember more and more of their math facts.
         </p>
         <h1>Why is learning math facts important?</h1>
         <p>Humans can only think about a few things at a time. 
           Knowing math facts without having to think about them frees up thinking for more complex math.
         </p>
         <h1>So I can put my students on the app and they'll learn their math facts?</h1>
-        <p>I recommend coaching students on how to use the app. They should understand the goal of remembering 
-          math facts without having to think about them. I also recommend teachers pay attention to patterns in 
-          fact families that students are having a hard time with and provide extra support with those.
+        <p>I recommend coaching students on how to use the app. They should understand the goal is to remember 
+          math facts without having to think about them. I also recommend paying attention to patterns in 
+          fact families that students are having a hard time with and providing extra support with those.
         </p>
         <h1>Do you guarantee that every student will master their math facts with Pulse?</h1>
         <p>Nope. There are no shortcuts to fact fluency. 
@@ -73,19 +74,20 @@ function About() {
         <h1>Can you give a more detailed description of how Pulse works?</h1>
         <p>Sure. Here's the basic sequence.</p>
         <ul>
-          <li>Link to either addition or multiplication</li>
-          <li>Click ready</li>
-          <li>45 problems</li>
-          <li>Analyzing mode - start with the operation, fact families, time to solve</li>
-          <li>Level up</li>
-          <li>Wrong or slow - practice mode, message</li>
-          <li>Every other problem</li>
-          <li>Held problems</li>
-          <li>Mixed problems</li>
-          <li>Nice, you're done</li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Click on the link to addition or multiplication practice, or give students a direct link to the right practice page.</li>
+          <li>Click "Ready?" when you're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
+          <li>Students will get a sequence of 45 problems.</li>
+          <li>They will start in analyzing mode. Analyzing mode gives students one question each from a series of fact families. 
+            Families are 2s, 10s, 5s, 1s, 0s, 11s, 4s, 3s, 6s, 9s, 8s, and 7s for multiplication. 
+            Families are +1s, +2s, doubles, near doubles &lt;i.e. 5+6 or 7+8&gt; +0s, 3s and 4s, and 5s through 8s.</li>
+          <li>If students finish all the fact families they "level up," for instance from multiplication to division, then "fill-in-the-blank" multiplication, then "fill-in-the-blank" division.</li>
+          <li>Students have 3.5 seconds to answer each question for the first operation, though there's no visible timer on the screen. This time decreases slowly as they move through more operations</li>
+          <li>If students get a question wrong or answer slowly, they switch to practice mode for that problem.</li>
+          <li>In practice mode, half the questions are on that fact family, and the other half are a mix of questions from fact families they've seen.</li>
+          <li>If students make a mistake in the first fact family they will see practice from a mix of the first few fact families.</li>
+          <li>In practice mode, if students make a mistake or answer slowly with the fact family they are working on they will see that problem again two questions later.</li>
+          <li>Problems are random, but students will typically see problems from that fact family multiple times each in a pracice session to encourage retrieval practice.</li>
+          <li>After 45 problems, students will see a message saying "Nice, you're done for today." That's it!</li>
         </ul>
       </div>
       
