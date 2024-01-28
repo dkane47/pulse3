@@ -17,6 +17,12 @@ function About() {
         <p>Humans can only think about a few things at a time. 
           Knowing math facts without having to think about them frees up thinking for more complex math.
         </p>
+        <h1>Shouldn't students learn math facts with understanding? This seems like rote memorization.</h1>
+        <p>Students definitely need to understand how the operations work. Pulse isn't designed to <i>teach</i> facts, it's designed to <i>practice</i> facts. 
+        Once students undertand how the different operations work, they still have a few hundred specifics facts to remember. 
+        That's a lot! You should absolutely teach your students to understand the operations. 
+        If you experience is like mine, even after students understand the operations they need more practice to commit them to long-term memory. That's what Pulse is designed for.
+        </p>
         <h1>So I can put my students on the app and they'll learn their math facts?</h1>
         <p>I recommend coaching students on how to use the app. They should understand the goal is to remember 
           math facts without having to think about them. I also recommend paying attention to patterns in 
