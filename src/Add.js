@@ -6,12 +6,12 @@ const Add = () => {
   //logic - sequence, step, operation
   const [logic, setLogic] = React.useState({
     sequence: [//first number is the problem, 
-      [0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], 
-      [0,1], [1,1], [2,1], [3,1], [4,1], [5,1], [6,1], 
-      [0,2], [1,2], [2,2], [3,2], [4,2], [5,2], [6,2], 
-      [0,3], [1,3], [2,3], [3,3], [4,3], [5,3], [6,3],
-      [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], 
-      [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0]
+      [0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], //addition sequence
+      [0,1], [1,1], [2,1], [3,1], [4,1], [5,1], [6,1], //subtraction sequence
+      [0,2], [1,2], [2,2], [3,2], [4,2], [5,2], [6,2], //addition fill-in-the-blank
+      [0,3], [1,3], [2,3], [3,3], [4,3], [5,3], [6,3], //subtraction fill-in-the-blank
+      [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], //multi-digit
+      [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0]
     ],
     step: -1 //default step
   });
@@ -89,26 +89,29 @@ const Add = () => {
       newNum2 = Math.floor(Math.random() * 10 + 1);//0 and 1 through 10
     } else if (type === 5) {
       newNum1 = Math.floor(Math.random() * 2 + 3);
-      newNum2 = Math.floor(Math.random() * (6 + 3 - newNum1) + 5 + newNum1 - 3);
+      newNum2 = Math.floor(Math.random() * (6 + 3 - newNum1) + 5 + newNum1 - 3); //3 or 4 and 6+
     } else if (type === 6) {
       newNum1 = Math.floor(Math.random() * 4 + 5);
-      newNum2 = Math.floor(Math.random() * (4 + 5 - newNum1) + 7 + newNum1 - 5);
-    } else {
-      newNum1 = Math.floor(Math.random() * 98 + 2);
+      newNum2 = Math.floor(Math.random() * (4 + 5 - newNum1) + 7 + newNum1 - 5); //5 through 8 and 8+
+    } else if (type === 7) {
+      newNum1 = Math.floor(Math.random() * 28 + 2); //two-digit round one
       newNum2 = Math.floor(Math.random() * 28 + 2);
+    } else {
+      newNum1 = Math.floor(Math.random() * 98 + 2); //two-digit round two
+      newNum2 = Math.floor(Math.random() * 98 + 2);
     }
     
     // if there is a held problem, set the problem to the held problem
-    if (holdData.hold && logic.step % 2 === 0) { 
+    if (holdData.hold && logic.step % 2 === 0) {  //held problem and even step number
       setProblem((prevProblem) => ({
         ...prevProblem,
         num1: holdData.held[0],
         num2: holdData.held[1],
-        operation: holdData.held[2],
+        operation: holdData.held[2], //put data into problem
         userAnswer: '', // Reset userAnswer when generating a new problem
         startTime: Date.now() // Update startTime with the current timestamp
       }));
-      setHoldData((prevHold) => ({
+      setHoldData((prevHold) => ({ //erase hold data
         ...prevHold,
         hold: false
       }));
@@ -117,7 +120,7 @@ const Add = () => {
         ...prevProblem,
         num1: newNum1,
         num2: newNum2,
-        operation: op,
+        operation: op, 
         userAnswer: '', // Reset userAnswer when generating a new problem
         startTime: Date.now() // Update startTime with the current timestamp
       }));
@@ -133,20 +136,20 @@ const Add = () => {
     }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [logic.step, logic.sequence]); 
   
-  const generateProblem = () => {
-    setLogic((prevLogic) => ({
+  const generateProblem = () => { //trigger useEffect by iterating step number
+    setLogic((prevLogic) => ({ //essential - step by one
       ...prevLogic,
       step: prevLogic.step + 1
     }));
     
-    let numLeft = displaySettings.totalProblems - logic.step;
+    let numLeft = displaySettings.totalProblems - logic.step; //message logic
     let problem;
-    if (numLeft > 1) {
+    if (numLeft > 1) { //plural for problems conditional
       problem = " problems";
     } else {
       problem = " problem"
     }
-    setMessages((prevMessages) => ({
+    setMessages((prevMessages) => ({ //set new messages
       ...prevMessages,
       message1: 'Solve it!',
       countdown: numLeft.toString() + problem + " left"
@@ -163,8 +166,8 @@ const Add = () => {
     
     // grab fact family to focus on
     const type = logic.sequence[logic.step][0];
-    let target;
-    if (type === 7) {
+    let target; //logic for message describing fact family
+    if (type >= 7) {
       target = "mixed addition"
     } else if (type === 0) {
       target = "+1s";
@@ -214,6 +217,9 @@ const Add = () => {
   }, [logic.step, logic.sequence]); // eslint-disable-line react-hooks/exhaustive-deps
   
   const hold = () => { // save a problem to repeat if user gets it wrong or slow in practic emode
+    if (problem.operation >= 7) {
+      return;
+    }
     setHoldData((prevHold) => ({ // set a boolean and problem so useEffect uses this problem
       hold: true,
       held: [problem.num1, problem.num2, problem.operation]
@@ -251,10 +257,10 @@ const Add = () => {
           generateProblem();
         } else if (tookMoreThanThreeSeconds && !displaySettings.switched) {//slow and analyzing mode
           targetedPractice();
-        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0) {
+        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0) {//slow and practice mode
           hold();
           generateProblem();
-        } else {
+        } else { //just regular old correct
           generateProblem();
         }
         }, 500);
@@ -264,22 +270,22 @@ const Add = () => {
         ...prevMessages,
         message1: 'Nope, ' + problem.num1.toString() + " × " + problem.num2.toString() + " = " + ans.toString()
       }));
-      setProblem((prevProblem) => ({
+      setProblem((prevProblem) => ({//reset input
         ...prevProblem,
         userAnswer: ''
       }));
-      if (!displaySettings.switched) {
+      if (!displaySettings.switched) {//switch to practice mode if not in practice mode
         setDisplaySettings((prevSettings) => ({
         ...prevSettings,
         switch: true
       }));
-      } else if (displaySettings.switched && logic.step % 2 === 0) {
+      } else if (displaySettings.switched && logic.step % 2 === 0) { //hold problem if in practice mode
         hold();
       }
     }
   };
 
-  const handleReadyClick = () => {
+  const handleReadyClick = () => { //function to start the app when the user clicks the ready button
     generateProblem(); // Call the generateProblem function
     setDisplaySettings({
       ...displaySettings,
