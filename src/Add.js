@@ -56,7 +56,7 @@ const Add = () => {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if ( (logic.step % 7 === 0 || logic.step === 1)&& !displaySettings.switched) {
+    if ( (logic.step % 7 === 0 || logic.step === 1) && logic.step < 28 && !displaySettings.switched) {
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
@@ -220,12 +220,8 @@ const Add = () => {
     }));
   };
 
-  React.useEffect(() => {
-    
-  }, [logic.step, logic.sequence]); // eslint-disable-line react-hooks/exhaustive-deps
-  
   const hold = () => { // save a problem to repeat if user gets it wrong or slow in practic emode
-    if (problem.operation >= 7) {
+    if (logic.sequence[logic.step][0] >= 7) {
       return;
     }
     setHoldData((prevHold) => ({ // set a boolean and problem so useEffect uses this problem
@@ -276,7 +272,7 @@ const Add = () => {
       //incorrect answer message
       setMessages((prevMessages) => ({
         ...prevMessages,
-        message1: 'Nope, ' + problem.num1.toString() + " × " + problem.num2.toString() + " = " + ans.toString()
+        message1: 'Nope, ' + problem.num1.toString() + " + " + problem.num2.toString() + " = " + ans.toString()
       }));
       setProblem((prevProblem) => ({//reset input
         ...prevProblem,

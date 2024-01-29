@@ -6,17 +6,17 @@ const Multiply = () => {
   //state variables
   //logic - sequence, step
   const [logic, setLogic] = React.useState({
-    sequence: [//first number is the problem, 
-      [2,0], [10,0], [5,0], [1,0], [0,0], [11,0], [4,0], [3,0], [6,0], [9,0], [8,0], [7,0], 
-      [2,1], [10,1], [5,1], [1,1], [11,1], [4,1], [3,1], [6,1], [9,1], [8,1], [7,1],
-      [2,2], [10,2], [5,2], [1,2], [11,2], [4,2], [3,2], [6,2], [9,2], [8,2], [7,2],
-      [2,3], [10,3], [5,3], [1,3], [11,3], [4,3], [3,3], [6,3], [9,3], [8,3], [7,3],
-      [12,0], [15,0], [16,0], [18,0], [21,0]
+    sequence: [//first number is the problem, second is the operation
+      [2,0], [10,0], [5,0], [1,0], [0,0], [11,0], [4,0], [3,0], [6,0], [9,0], [8,0], [7,0], //multiplication, includes 0
+      [2,1], [10,1], [5,1], [1,1], [11,1], [4,1], [3,1], [6,1], [9,1], [8,1], [7,1], //division
+      [2,2], [10,2], [5,2], [1,2], [11,2], [4,2], [3,2], [6,2], [9,2], [8,2], [7,2], //fill-in-the-blank multiplication
+      [2,3], [10,3], [5,3], [1,3], [11,3], [4,3], [3,3], [6,3], [9,3], [8,3], [7,3], //division
+      [12,0], [15,0], [16,0], [18,0], [21,0] //extra multiplication just in case
     ],
     step: -1 //default step
   });
   
-  //problem - numbers, answer, startTime
+  //problem - numbers, answer, startTime, operation
   const [problem, setProblem] = React.useState({
     num1: 0, // First number in the problem
     num2: 0, // Second number in the problem
@@ -45,29 +45,29 @@ const Multiply = () => {
     held: [] //problem to repeat
   });
   
-  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false);
+  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false); //whether to dispaly level up message
 
-  const [timeToTarget, setTimeToTarget] = React.useState(4000);
+  const [timeToTarget, setTimeToTarget] = React.useState(4000); //default time for an answer to count as "fast"
 
-  React.useEffect(() => {
-    if (logic.step % 11 === 1 && logic.step > 2 && !displaySettings.switched) {
+  React.useEffect(() => { //function for level up and timeToTarget adjustments
+    if (logic.step % 11 === 1 && logic.step > 2 && !displaySettings.switched) { //level up logic
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if (logic.step % 11 === 1 && !displaySettings.switched) {
+    if (logic.step % 11 === 1 && !displaySettings.switched) { //logic for reducing timeToTarget
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
 
   // Inside useEffect, add handleOperationChange to the dependency array:
   React.useEffect(() => {
-    if (logic.step === -1) {
+    if (logic.step === -1) { //don't try to do anything before stepping to 0
       return;
     }
     
-    // pull first number from sequence
+    // pull first number and operation from sequence
     let newNum1 = logic.sequence[logic.step][0];
     let op = logic.sequence[logic.step][1];
     
@@ -93,7 +93,7 @@ const Multiply = () => {
         userAnswer: '', // Reset userAnswer when generating a new problem
         startTime: Date.now() // Update startTime with the current timestamp
       }));
-      setHoldData((prevHold) => ({
+      setHoldData((prevHold) => ({ //clear hold data
         ...prevHold,
         hold: false
       }));
@@ -118,27 +118,27 @@ const Multiply = () => {
     }// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [logic.step, logic.sequence]); 
   
-  const generateProblem = () => {
-    setLogic((prevLogic) => ({
+  const generateProblem = () => { //logic to trigger useEffect and generate a problem
+    setLogic((prevLogic) => ({ //bump step forward
       ...prevLogic,
       step: prevLogic.step + 1
     }));
     
-    let numLeft = displaySettings.totalProblems - logic.step;
-    let problem;
+    let numLeft = displaySettings.totalProblems - logic.step; //countdown
+    let problem; //plural logic for problem/problems
     if (numLeft > 1) {
       problem = " problems";
     } else {
       problem = " problem"
     }
-    setMessages((prevMessages) => ({
+    setMessages((prevMessages) => ({ //set messages for new problem
       ...prevMessages,
       message1: 'Solve it!',
       countdown: numLeft.toString() + problem + " left"
     }));
   }; 
 
-  const targetedPractice = () => {
+  const targetedPractice = () => { //function to switch from analyzing mode to practice mode
     // set logic signaling that practice mode has begun
     setDisplaySettings((prevSettings) => ({
       ...prevSettings,
@@ -149,7 +149,7 @@ const Multiply = () => {
     // grab fact family to focus on
     const target = logic.sequence[logic.step];
     
-    // set messages highlighting fact family and setting countdown
+    // set messages highlighting fact family and setting countdown, duplicated from above
     let numLeft = displaySettings.totalProblems - logic.step;
     let problem;
     if (numLeft > 1) {
@@ -182,10 +182,6 @@ const Multiply = () => {
       sequence: newArray
     }));
   };
-
-  React.useEffect(() => {
-    
-  }, [logic.step, logic.sequence]); // eslint-disable-line react-hooks/exhaustive-deps
   
   const hold = () => { // save a problem to repeat if user gets it wrong or slow in practic emode
     setHoldData((prevHold) => ({ // set a boolean and problem so useEffect uses this problem
@@ -225,10 +221,10 @@ const Multiply = () => {
           generateProblem();
         } else if (tookMoreThanThreeSeconds && !displaySettings.switched) {//slow and analyzing mode
           targetedPractice();
-        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0) {
+        } else if (tookMoreThanThreeSeconds && displaySettings.switched && logic.step % 2 === 0) { //hold if slow during practice mode
           hold();
           generateProblem();
-        } else {
+        } else { //regular correct answer
           generateProblem();
         }
         }, 500);
@@ -238,22 +234,22 @@ const Multiply = () => {
         ...prevMessages,
         message1: 'Nope, ' + problem.num1.toString() + " × " + problem.num2.toString() + " = " + ans.toString()
       }));
-      setProblem((prevProblem) => ({
+      setProblem((prevProblem) => ({ //clear input
         ...prevProblem,
         userAnswer: ''
       }));
-      if (!displaySettings.switched) {
+      if (!displaySettings.switched) { //switch on next correct answer
         setDisplaySettings((prevSettings) => ({
         ...prevSettings,
         switch: true
       }));
-      } else if (displaySettings.switched && logic.step % 2 === 0) {
+      } else if (displaySettings.switched && logic.step % 2 === 0) { //hold if in practice mode and even
         hold();
       }
     }
   };
 
-  const handleReadyClick = () => {
+  const handleReadyClick = () => { //function for ready button to start
     generateProblem(); // Call the generateProblem function
     setDisplaySettings({
       ...displaySettings,
