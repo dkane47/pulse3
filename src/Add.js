@@ -186,10 +186,18 @@ const Add = () => {
     }
     
     // set messages highlighting fact family and setting countdown
-    setMessages((prevMessages) => ({
+    let numLeft = displaySettings.totalProblems - logic.step; //message logic
+    let problem;
+    if (numLeft > 1) { //plural for problems conditional
+      problem = " problems";
+    } else {
+      problem = " problem"
+    }
+    setMessages((prevMessages) => ({ //set new messages
       ...prevMessages,
+      message1: 'Solve it!',
       message2: "You are working on " + target + " today",
-      countdown: (displaySettings.totalProblems + 1).toString() + " problems left"
+      countdown: numLeft.toString() + problem + " left"
     }));
     
     // build array alternating target family with mixed practice

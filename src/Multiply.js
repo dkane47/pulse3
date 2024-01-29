@@ -150,10 +150,18 @@ const Multiply = () => {
     const target = logic.sequence[logic.step];
     
     // set messages highlighting fact family and setting countdown
+    let numLeft = displaySettings.totalProblems - logic.step;
+    let problem;
+    if (numLeft > 1) {
+      problem = " problems";
+    } else {
+      problem = " problem"
+    }
     setMessages((prevMessages) => ({
       ...prevMessages,
+      message1: 'Solve it!',
       message2: "You are working on " + target[0].toString() + "s today",
-      countdown: (displaySettings.totalProblems + 1).toString() + " problems left"
+      countdown: numLeft.toString() + problem + " left"
     }));
     
     // build array alternating target family with mixed practice
