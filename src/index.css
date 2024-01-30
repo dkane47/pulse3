@@ -170,3 +170,11 @@ input[type="number"]::-webkit-inner-spin-button {
     justify-content: flex-start;
   }
 }
+
+hr {
+  border-color: black;
+  color: black;
+  background-color: black;
+  border-width: 1px;
+  border-style: solid;
+}
