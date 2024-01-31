@@ -4,14 +4,18 @@ function About() {
     return (
       <div className="about">
         <h2>What is Pulse?</h2>
-        <p>How do you respond when a student doesn't know a math fact? 
-          Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
+        <p>Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
           Retrieval practice means retrieving the thing from memory, not just deriving it or repeating it to ourselves. 
           Pulse is designed to help students retrieve facts from memory. First, it figures out a fact family students are having a hard time with. 
-          Then, students do some practice 
-          focused on that fact family. For any fact they don't know, either because they get it wrong or take too long to figure it out, 
+          Then, students do some practice focused on that fact family. 
+          For any fact they don't know, either because they get it wrong or take too long to figure it out, 
           they practice that fact again a few questions later. 
-          Over time, retrieval practice will help students remember more and more of their math facts.
+          If students can't remember a fact or need to skip-count or use their fingers to find it, Pulse is a good tool to help students commit those facts to long-term memory. 
+        </p>
+        <hr></hr>
+        <h2>How is that different from other math fact practice apps?</h2>
+        <p>When a student doesn't know a fact, Pulse responds by reminding them of the fact and then giving them a chance to retrieve it from memory. 
+          Most other apps out there don't do that.
         </p>
         <hr></hr>
         <h2>Why is learning math facts important?</h2>
@@ -41,7 +45,7 @@ function About() {
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
         <p>That will happen. Pulse is probabibilistic. Students will 
           often spend their time on a fact family they aren't as good at, but they might just have
-          been chatting with a friend as they got started or made a silly mistake and Pulse thought they didn't know a fact. That's fine. 
+          been chatting with a friend as they got started or made a silly mistake and Pulse thought they needed to practice that fact family. That's fine. 
           They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day.
         </p>
         <hr></hr>
@@ -50,7 +54,7 @@ function About() {
         <hr></hr>
         <h2>How do you use Pulse with your students?</h2>
         <p>I assign either Pulse Addition or Pulse Multiplication twice a week. I do some progress monitoring using paper and pencil to 
-          figure out which students should be focusing on addition and which on multiplication and use Google Classroom 
+          figure out which students should be focusing on addition and which on multiplication, and use Google Classroom 
           to assign the right link to students. I do a fair amount of coaching, both when we first start Pulse and as I 
           observe students working, to help them understand how to use Pulse to improve their recall of math facts. 
         </p>
@@ -63,14 +67,14 @@ function About() {
         <hr></hr>
         <h2>What should I do to help students who don't make progress?</h2>
         <p>Teach them! Pulse is a good tool for practice once students understand how the operations work. 
-          Pulse is not a substitute for teaching about how the basic operations work. 
-          If students aren't making progress, help them see patterns in the fact families they are most often working on. 
+          Pulse is not a substitute for teaching about the operations. 
+          If students aren't making progress, help them see patterns in the fact families they are often working on. 
         </p>
         <hr></hr>
         <h2>Why not have students sign in and track their progress?</h2>
         <p>I prefer a tool that is simple to use. I can see what students are working on by walking around and looking at their screen. 
-          I also don't like the tools that claim students have "mastered" a skill and then move on. 
-          That's not how learning works. Students can always benefit from more practice even on facts they mostly know.
+          Students don't make nice linear progress in their fact knowledge. 
+          I don't think tracking their progress on type of practice is very helpful.
         </p>
         <hr></hr>
         <h2>Why not make it a game?</h2>
