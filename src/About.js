@@ -13,7 +13,7 @@ function About() {
         </p>
         <hr></hr>
         <h2>How does Pulse figure out if a student knows a fact, rather than finding it by skip-counting or another strategy?</h2>
-        <p>Pulse identifies fact families to focus on when a student either gets a question wrong, or takes too long to answer. 
+        <p>Pulse identifies fact families to focus on when a student either gets a question wrong or takes too long to answer. 
           Speed is a decent proxy for having facts in long-term memory. If a student needs five seconds to remember a fact they could benefit from more retrieval practice. 
           Too many apps approach this by pressuring students to solve problems quickly, but telling someone to go faster doesn't necessarily help them commit facts to memory. 
           Instead, Pulse uses speed as an indicator of which facts students can use more practice with. No pressure, but lots of chances for retrieval practice with facts students don't know very well yet. 
@@ -55,14 +55,14 @@ function About() {
         <hr></hr>
         <h2>How do you use Pulse with your students?</h2>
         <p>I assign either Pulse Addition or Pulse Multiplication twice a week. I do some progress monitoring using paper and pencil to 
-          figure out which students should be focusing on addition and which on multiplication, and use Google Classroom 
+          figure out which students should be focusing on addition and which on multiplication and use Google Classroom 
           to assign the right link to students. I do a fair amount of coaching, both when we first start Pulse and as I 
           observe students working, to help them understand how to use Pulse to improve their recall of math facts. 
         </p>
         <hr></hr>
         <h2>What should I do to help my students use Pulse effectively?</h2>
         <p>Help them understand that they should try to answer as fast as they can, but if they can't remember a fact that's fine. 
-          They'll get some focused practice on that fact. Also, help students understand that, if they get facts in their 
+          They'll get some focused practice on that fact and similar facts. Also, help students understand that, if they get facts in their 
           target fact family wrong or answer slowly, that fact will repeat two problems later. That's a great chance to practice remembering it!
         </p>
         <hr></hr>
@@ -97,7 +97,7 @@ function About() {
         </p>
         <hr></hr>
         <h2>Can you give a more detailed description of how Pulse works?</h2>
-        <p>Sure. Here's the basic sequence.</p>
+        <p>Sure.</p>
         <ul>
           <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page.</li>
           <li>Click "Ready?" when you're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
