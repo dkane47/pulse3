@@ -8,14 +8,15 @@ function About() {
           Retrieval practice means retrieving the thing from memory, not just deriving it or repeating it to ourselves. 
           Pulse is designed to help students retrieve facts from memory. First, it figures out a fact family students are having a hard time with. 
           Then, students do some practice focused on that fact family. 
-          For any fact they don't know, either because they get it wrong or take too long to figure it out, 
-          they practice that fact again a few questions later. 
-          If students can't remember a fact or need to skip-count or use their fingers to find it, Pulse is a good tool to help students commit those facts to long-term memory. 
+          For any fact in the fact family they don't know, students practice that fact again a few questions later. 
+          If students can't remember a fact or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help students commit those facts to long-term memory. 
         </p>
         <hr></hr>
-        <h2>How is that different from other math fact practice apps?</h2>
-        <p>When a student doesn't know a fact, Pulse responds by reminding them of the fact and then giving them a chance to retrieve it from memory. 
-          Most other apps out there don't do that.
+        <h2>How does Pulse figure out if a student knows a fact, rather than finding it by skip-counting or another strategy?</h2>
+        <p>Pulse identifies fact families to focus on when a student either gets a question wrong, or takes too long to answer. 
+          Speed is a decent proxy for having facts in long-term memory. If a student needs five seconds to remember a fact they could benefit from more retrieval practice. 
+          Too many apps approach this by pressuring students to solve problems quickly, but telling someone to go faster doesn't necessarily help them commit facts to memory. 
+          Instead, Pulse uses speed as an indicator of which facts students can use more practice with. No pressure, but lots of chances for retrieval practice with facts students don't know very well yet. 
         </p>
         <hr></hr>
         <h2>Why is learning math facts important?</h2>
@@ -111,7 +112,7 @@ function About() {
           <li>If students make a mistake in the first fact family they will see practice from a mix of the first few fact families.</li>
           <li>In practice mode, if students make a mistake or answer slowly on the fact family they are working on they will see that problem again two questions later.</li>
           <li>Problems are random, but students will typically see problems from that fact family multiple times each in a pracice session to encourage retrieval practice.</li>
-          <li>After 45 problems, students will see a message saying "Nice, you're done for today." That's it!</li>
+          <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
         </ul>
       </div>
       
