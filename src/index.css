@@ -27,6 +27,13 @@ code {
   background-color: #87CEFA; /* Move the background color here from body */
 }
 
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .app {
+    justify-content: flex-start; /* Change justify-content on mobile */
+    margin: 30px; /* Add margin on mobile */
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
