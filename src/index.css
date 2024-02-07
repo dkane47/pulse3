@@ -166,9 +166,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 @media (max-width: 768px) { /* Adjust breakpoint as needed */
   .about {
-    width: 100%; /* Set width to 100% for full viewport width */
+    width: 90%; /* Set width to 100% for full viewport width */
     padding: 10px; /* Adjust padding for smaller screens */
-    margin: 10px 10px; /* Adjust margin for smaller screens */
+    margin: 10px; /* Adjust margin for smaller screens */
   }
 }
 
