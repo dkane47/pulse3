@@ -116,6 +116,12 @@ input[type="number"]::-webkit-inner-spin-button {
   animation: fadeOut 2s ease-out forwards; /* Fade-out animation */
 }
 
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .level-up-message {
+    font-size: 2rem; /* Reduce font size for mobile */
+  }
+}
+
 /* Keyframes for the fade-out animation */
 @keyframes fadeOut {
   0% { opacity: 0.75; }
