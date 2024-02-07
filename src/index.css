@@ -164,6 +164,14 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 5px 20px;
 }
 
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .about {
+    width: 100%; /* Set width to 100% for full viewport width */
+    padding: 10px; /* Adjust padding for smaller screens */
+    margin: 10px 0; /* Adjust margin for smaller screens */
+  }
+}
+
 .title {
   font-size: 50px;
   color: #4f1d5a;
