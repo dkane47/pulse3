@@ -63,7 +63,9 @@ function About() {
         <h2>What should I do to help my students use Pulse effectively?</h2>
         <p>Help them understand that they should try to answer as fast as they can, but if they can't remember a fact that's fine. 
           They'll get some focused practice on that fact and similar facts. Also, help students understand that, if they get facts in their 
-          target fact family wrong or answer slowly, that fact will repeat two problems later. That's a great chance to practice remembering it!
+          target fact family wrong or answer slowly, that fact will repeat two problems later. That's a great chance to practice remembering it! 
+          Make sure students aren't trying to game the system by getting questions wrong intentionally. 
+          Make sure students aren't just hitting enter and copying answers every time. 
         </p>
         <hr></hr>
         <h2>What should I do to help students who don't make progress?</h2>
