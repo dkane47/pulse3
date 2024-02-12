@@ -51,13 +51,33 @@ const Add = () => {
   const [timeToTarget, setTimeToTarget] = React.useState(4000);
 
   React.useEffect(() => {
-    if (logic.step % 7 === 0 && logic.step > 0 && !displaySettings.switched) {
+    let numbers = [0,1,2,3,4,5,6];
+    let s = numbers.slice().sort(() => Math.random() - 0.5);
+    setLogic((prevLogic) => ({
+      ...prevLogic,
+      sequence: [
+        [s[0],0], [s[1],0], [s[2],0], [s[3],0],  //addition r1
+        [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //subtraction
+        [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank addition
+        [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //fill-in-the-blank subtraction
+        [s[4],0], [s[5],0], [s[6],0],  //addition r2
+        [s[4],1], [s[5],1], [s[6],1],  //subtraction r2
+        [s[4],2], [s[5],2], [s[6],2],  //fill-in add r2
+        [s[4],3], [s[5],3], [s[6],3],  //fill-in sub r2
+        [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], //multi-digit
+        [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8.0]
+      ]
+    }));
+  }, []);
+
+  React.useEffect(() => {
+    if (logic.step % 4 === 0 && logic.step > 0 && logic.step < 17 && !displaySettings.switched) {
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if ( (logic.step % 7 === 0 || logic.step === 1) && logic.step < 28 && !displaySettings.switched) {
+    if ( (logic.step % 4 === 0 || logic.step === 1) && logic.step < 13 && !displaySettings.switched) {
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
@@ -208,8 +228,10 @@ const Add = () => {
       if (i % 2 === 0) {
         newArray.push(current);
       } else {
-        const randomIndex = Math.floor(Math.random() * Math.max(3,logic.step));
-        newArray.push(logic.sequence[randomIndex]);
+        const solvedProblems = [...logic.sequence].slice(0, logic.step);
+        const easyProblems = [...solvedProblems,[0,0],[1,0],[4,0]]
+        const randomIndex = Math.floor(Math.random() * (logic.step + 3));
+        newArray.push(easyProblems[randomIndex]);
       }
     }
     
