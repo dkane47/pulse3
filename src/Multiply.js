@@ -50,14 +50,31 @@ const Multiply = () => {
 
   const [timeToTarget, setTimeToTarget] = React.useState(4000); //default time for an answer to count as "fast"
 
+  React.useEffect(() => {
+    let numbers = [2,3,4,5,6,9,10,11];
+    let s = numbers.slice().sort(() => Math.random() - 0.5);
+    setLogic((prevLogic) => ({
+      ...prevLogic,
+      sequence: [[s[0],0], [s[1],0], [s[2],0], [s[3],0],  //multiplication r1
+      [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //division
+      [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank multiplication
+      [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //division
+      [s[4],0], [s[5],0], [s[6],0], [s[7],0],  //multiplication r2
+      [s[4],1], [s[5],1], [s[6],1], [s[7],1],  //division r2
+      [s[4],2], [s[5],2], [s[6],2], [s[7],2],  //fill-in mult r2
+      [s[4],3], [s[5],3], [s[6],3], [s[7],3],  //fill-in div r2
+      [12,0], [15,0], [16,0], [18,0], [21,0], [22,0], [25,0], [31,0], [13,0], [14,0], [17,0], [19,0], [45,0], [35,0]]
+    }));
+  }, []);
+  
   React.useEffect(() => { //function for level up and timeToTarget adjustments
-    if (logic.step % 11 === 1 && logic.step > 2 && !displaySettings.switched) { //level up logic
+    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 34 && !displaySettings.switched) { //level up logic
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if (logic.step % 11 === 1 && !displaySettings.switched) { //logic for reducing timeToTarget
+    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 14 && !displaySettings.switched) { //logic for reducing timeToTarget
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
@@ -70,18 +87,39 @@ const Multiply = () => {
     
     // pull first number and operation from sequence
     let newNum1 = logic.sequence[logic.step][0];
+    if (newNum1 === 6) {
+      newNum1 = Math.floor(Math.random() * 3 + 6);
+    }
     let op = logic.sequence[logic.step][1];
     
     // generate second number randomly with some logic based on size
     let newNum2;
     if (newNum1 === 0) {
       newNum2 = Math.floor(Math.random() * 12);
-    } else if (newNum1 <= 2) {
-      newNum2 = Math.floor(Math.random() * 9 + 1);
-    } else if (newNum1 <= 11) {
-      newNum2 = Math.floor(Math.random() * 7 + 3);
+    } else if (newNum1 === 1) {
+      newNum2 = Math.floor(Math.random() * 11 + 1);
+    } else if (newNum1 === 2) {
+      newNum2 = Math.floor(Math.random() * 7 + 2);
+    } else if (newNum1 === 3) {
+      newNum2 = Math.floor(Math.random() * 6 + 3);
+    } else if (newNum1 === 4) {
+      newNum2 = Math.floor(Math.random() * 5 + 4);
+    } else if (newNum1 === 5) {
+      newNum2 = Math.floor(Math.random() * 5 + 4);
+    } else if (newNum1 === 6) {
+      newNum2 = Math.floor(Math.random() * 3 + 6);
+    } else if (newNum1 === 7) {
+      newNum2 = Math.floor(Math.random() * 2 + 7);
+    } else if (newNum1 === 8) {
+      newNum2 = 8
+    } else if (newNum1 === 9) {
+      newNum2 = Math.floor(Math.random() * 8 + 2);
+    } else if (newNum1 === 10) {
+      newNum2 = Math.floor(Math.random() * 9 + 2);
+    } else if (newNum1 === 11) {
+      newNum2 = Math.floor(Math.random() * 8 + 2);
     } else {
-      newNum2 = Math.floor(Math.random() * 10 + 3);
+      newNum2 = Math.floor(Math.random() * 8 + 2);
     }
     
     // if there is a held problem, set the problem to the held problem
@@ -158,12 +196,23 @@ const Multiply = () => {
     } else {
       problem = " problem"
     }
-    setMessages((prevMessages) => ({
-      ...prevMessages,
-      message1: 'Solve it!',
-      message2: "You are working on " + target[0].toString() + "s today",
-      countdown: numLeft.toString() + problem + " left"
-    }));
+    
+    if (target[0] !== 6) {
+      setMessages((prevMessages) => ({
+        ...prevMessages,
+        message1: 'Solve it!',
+        message2: "You are working on " + target[0].toString() + "s today",
+        countdown: numLeft.toString() + problem + " left"
+      }));
+    } else {
+      setMessages((prevMessages) => ({
+        ...prevMessages,
+        message1: 'Solve it!',
+        message2: "You are working on 6s, 7s, and 8s today",
+        countdown: numLeft.toString() + problem + " left"
+      }));
+    }
+    
     
     // build array alternating target family with mixed practice
     let newArray = [];
@@ -171,8 +220,11 @@ const Multiply = () => {
       if (i % 2 === 0) {
         newArray.push(target);
       } else {
-        const randomIndex = Math.floor(Math.random() * Math.max(4,logic.step));
-        newArray.push(logic.sequence[randomIndex]);
+        
+        const solvedProblems = [...logic.sequence].slice(0, logic.step);
+        const easyProblems = [...solvedProblems,[2,0],[10,0],[1,0],[0,0]]
+        const randomIndex = Math.floor(Math.random() * (logic.step + 4));
+        newArray.push(easyProblems[randomIndex]);
       }
     }
     
