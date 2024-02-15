@@ -14,13 +14,13 @@ const Multiply = () => {
       [2,3], [10,3], [5,3], [1,3], [11,3], [4,3], [3,3], [6,3], [9,3], [8,3], [7,3], //division
       [12,0], [15,0], [16,0], [18,0], [21,0] //extra multiplication just in case
     ],
-    step: -1 //default step
+    step: -1 //default step,
   });
   
   //problem - numbers, answer, startTime, operation
   const [problem, setProblem] = React.useState({
     num1: 0, // First number in the problem
-    num2: 0, // Second number in the problem
+    num2: 0, // Second number in the problem,
     operation: 0,
     userAnswer: '', // User's answer to the problem
     startTime: 0 // Timestamp when the problem started
@@ -74,7 +74,7 @@ const Multiply = () => {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 14 && !displaySettings.switched) { //logic for reducing timeToTarget
+    if (logic.step % 4 === 1 && logic.step < 14 && !displaySettings.switched) { //logic for reducing timeToTarget
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
@@ -220,7 +220,6 @@ const Multiply = () => {
       if (i % 2 === 0) {
         newArray.push(target);
       } else {
-        
         const solvedProblems = [...logic.sequence].slice(0, logic.step);
         const easyProblems = [...solvedProblems,[2,0],[10,0],[1,0],[0,0]]
         const randomIndex = Math.floor(Math.random() * (logic.step + 4));
@@ -244,6 +243,10 @@ const Multiply = () => {
   };
 
   const checkAnswer = () => {
+    if (messages.message1 === 'Correct!') {
+      return;
+    }
+    
     //variable for speed
     // Calculate time difference in milliseconds
     const currentTime = Date.now();

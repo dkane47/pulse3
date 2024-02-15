@@ -5,18 +5,18 @@ function About() {
       <div className="about">
         <h2>What is Pulse?</h2>
         <p>Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
-          Retrieval practice means retrieving the thing from memory, not just deriving it or repeating it to ourselves. 
+          Retrieval practice means retrieving the thing from memory, not deriving it or repeating it to ourselves. 
           Pulse is designed to help students retrieve facts from memory. First, it figures out a fact family students are having a hard time with. 
           Then, students do some practice focused on that fact family. 
-          For any fact in the fact family they don't know, students practice that fact again a few questions later. 
+          For any fact in the fact family they don't know, students practice that fact again two questions later. 
           If students can't remember a fact or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help students commit those facts to long-term memory. 
         </p>
         <hr></hr>
         <h2>How does Pulse figure out if a student knows a fact, rather than finding it by skip-counting or another strategy?</h2>
         <p>Pulse identifies fact families to focus on when a student either gets a question wrong or takes too long to answer. 
           Speed is a decent proxy for having facts in long-term memory. If a student needs five seconds to remember a fact they could benefit from more retrieval practice. 
-          Too many apps approach this by pressuring students to solve problems quickly, but telling someone to go faster doesn't necessarily help them commit facts to memory. 
-          Instead, Pulse uses speed as an indicator of which facts students can use more practice with. No pressure, but lots of chances for retrieval practice with facts students don't know very well yet. 
+          Pulse doesn't pressure students to solve problems quickly. Telling someone to go faster doesn't necessarily help them commit facts to memory. 
+          Instead, Pulse uses speed as an indicator of which facts students could use more practice with. No pressure, but lots of chances for retrieval practice with facts students don't know very well yet. 
         </p>
         <hr></hr>
         <h2>Why is learning math facts important?</h2>

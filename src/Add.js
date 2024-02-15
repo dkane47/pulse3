@@ -254,6 +254,10 @@ const Add = () => {
   };
 
   const checkAnswer = () => {
+    if (messages.message1 === 'Correct!') {
+      return;
+    }
+    
     //variable for speed
     // Calculate time difference in milliseconds
     const currentTime = Date.now();
