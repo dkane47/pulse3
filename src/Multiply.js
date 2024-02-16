@@ -346,8 +346,8 @@ const Multiply = () => {
 
 const Introduction = ({ onReadyClick }) => {
   return (
-    <div className="container">
-      <h1 className="intro">Welcome to Pulse: Multiplication</h1>
+    <div className="container intro">
+      <h1>Welcome to Pulse: Multiplication</h1>
       <p>Solve each problem, then press Enter</p>
       <button className="ready-btn" onClick={onReadyClick}>Ready?</button>
     </div>
