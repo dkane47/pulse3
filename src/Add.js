@@ -359,7 +359,7 @@ const Add = () => {
 const Introduction = ({ onReadyClick }) => { //introduction page with start button
   return (
     <div className="container">
-      <h1>Welcome to Pulse: Addition</h1>
+      <h1 className="intro">Welcome to Pulse: Addition</h1>
       <p>Solve each problem, then press Enter</p>
       <button className="ready-btn" onClick={onReadyClick}>Ready?</button>
     </div>
