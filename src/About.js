@@ -28,7 +28,7 @@ function About() {
         <p>Students definitely need to understand how the operations work. Pulse isn't designed to <i>teach</i> facts, it's designed to <i>practice</i> facts. 
         Once students undertand how the different operations work they still have a few hundred specifics facts to remember. 
         That's a lot! You should absolutely teach your students to understand the operations. 
-        If your experience is like mine, even after students understand the operations they need more practice to commit them to long-term memory. That's what Pulse is designed for.
+        If your experience is like mine, even after students understand the operations they need more practice to commit facts to long-term memory. That's what Pulse is designed for.
         </p>
         <hr></hr>
         <h2>So I can put my students on the app and they'll learn their math facts?</h2>
@@ -86,9 +86,9 @@ function About() {
         </p>
         <hr></hr>
         <h2>Is there research that supports Pulse?</h2>
-        <p>Pulse is informed by lots of research on retrieval practice. 
-          Research hasn't found the perfect way to teach multiplication facts, so reasonable people might disagree about the best way to structure fact practice based on research. 
-          Pulse is designed using a mix of research and classroom experience. 
+        <p>Pulse is informed by lots of research on retrieval practice, incremental practice, and interleaving. 
+          Research hasn't found the perfect way to teach multiplication facts. Reasonable people disagree about the best way to structure fact practice based on research. 
+          Pulse is also informed by classroom testing and experience to balance research and practicality. 
         </p>
         <hr></hr>
         <h2>Why not use visuals to show how multiplication works?</h2>
@@ -101,19 +101,18 @@ function About() {
         <h2>Can you give a more detailed description of how Pulse works?</h2>
         <p>Sure.</p>
         <ul>
-          <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page.</li>
+          <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page (pulsemath.com/add or pulsemath.com/multiply).</li>
           <li>Click "Ready?" when you're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
           <li>Students will see a sequence of 45 problems.</li>
           <li>They will start in analyzing mode. Analyzing mode gives students one question each from a series of fact families. 
-            Families for multiplication are 2s, 10s, 5s, 1s, 0s, 11s, 4s, 3s, 6s, 9s, 8s, and 7s. 
-            Families for addition are +1s, +2s, doubles, near doubles (i.e. 5+6 or 7+8) +0s, 3s and 4s, and 5s through 8s.</li>
-          <li>If students finish all the fact families they "level up," for instance from multiplication to division, then "fill-in-the-blank" multiplication, then "fill-in-the-blank" division.</li>
+            The order of fact families is different every time.</li>
+          <li>If students get four questions right in a row in a fact family they "level up," for instance from multiplication to division, then "fill-in-the-blank" multiplication, then "fill-in-the-blank" division.</li>
           <li>Students have 3.5 seconds to answer each question for the first operation, though there's no visible timer on the screen. This time decreases slowly as they move through more operations</li>
           <li>If students get a question wrong or answer slowly they switch to practice mode for that problem.</li>
           <li>In practice mode, half the questions are on that fact family, and the other half are a mix of questions from fact families they've seen.</li>
-          <li>If students make a mistake in the first fact family they will see practice from a mix of the first few fact families.</li>
+          <li>If students make a mistake in the first fact family they will see practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
           <li>In practice mode, if students make a mistake or answer slowly on the fact family they are working on they will see that problem again two questions later.</li>
-          <li>Problems are random, but students will typically see problems from that fact family multiple times each in a pracice session to encourage retrieval practice.</li>
+          <li>Problems are random, but students will typically see each problem from that fact family multiple times each in a pracice session to encourage successful retrieval practice.</li>
           <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
         </ul>
       </div>
