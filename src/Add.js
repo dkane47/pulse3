@@ -5,7 +5,7 @@ const Add = () => {
   //state variables
   //logic - sequence, step, operation
   const [logic, setLogic] = React.useState({
-    sequence: [],
+    sequence: [], //initialized in useEffect later
     step: -1 //default step
   });
   
@@ -38,23 +38,23 @@ const Add = () => {
     held: [] //problem to repeat
   });
   
-  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false);
+  const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false); //display level up message
 
-  const [timeToTarget, setTimeToTarget] = React.useState(4000);
+  const [timeToTarget, setTimeToTarget] = React.useState(4000); //time to complete a problem before it is labeled slow
 
   React.useEffect(() => {
-    let numbers = [0,1,2,3,5,6];
-    let s = numbers.slice().sort(() => Math.random() - 0.5);
-    setLogic((prevLogic) => ({
+    let numbers = [0,1,2,3,5,6]; //list of problems to randomize - doesn't include +0
+    let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
+    setLogic((prevLogic) => ({ //build sequence
       ...prevLogic,
       sequence: [
-        [s[0],0], [s[1],0], [s[2],0], [s[3],0],  //addition r1
+        [s[0],0], [s[1],0], [s[2],0], [s[3],0],  //addition
         [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //subtraction
         [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank addition
         [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //fill-in-the-blank subtraction
-        [s[4],0], [s[4],1], [s[4],2], [s[4],3], 
+        [s[4],0], [s[4],1], [s[4],2], [s[4],3], //random mix
         [s[5],0], [s[5],1], [s[5],2], [s[5],3],
-        [6,0], [6,1], [6,2], [6,3],
+        [6,0], [6,1], [6,2], [6,3], //extra 5s-8s
         [7,0], [7,0], [7,1], [7,1], [7,2], [7,2], [7,3], [7,3], //multi-digit
         [8,0], [8,0], [8,1], [8,1], [8,2], [8,2], [8,3], [8,3], [8,0], [8,0], [8,0], [8.0]
       ]
@@ -62,27 +62,27 @@ const Add = () => {
   }, []);
 
   React.useEffect(() => {
-    if (logic.step % 4 === 0 && logic.step > 0 && logic.step < 17 && !displaySettings.switched) {
+    if (logic.step % 4 === 0 && logic.step > 0 && logic.step < 17 && !displaySettings.switched) { //logic for level up message
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if ( (logic.step % 4 === 0 || logic.step === 1) && logic.step < 13 && !displaySettings.switched) {
+    if ( (logic.step % 4 === 0 || logic.step === 1) && logic.step < 13 && !displaySettings.switched) { //logic for time decrements
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
 
-  // Inside useEffect, add handleOperationChange to the dependency array:
+  // Core function, generates next problem when step is incremented
   React.useEffect(() => {
-    if (logic.step === -1) {
+    if (logic.step === -1) { //do nothing if ready button hasn't been clicked
       return;
     }
     
-    let newNum1;
+    let newNum1; //initialize variables
     let newNum2;
-    let op = logic.sequence[logic.step][1];
-    const type = logic.sequence[logic.step][0];
+    let op = logic.sequence[logic.step][1]; //pull operation
+    const type = logic.sequence[logic.step][0]; //pull fact family
     
     if (type === 0) {
       newNum1 = 1;
@@ -127,7 +127,7 @@ const Add = () => {
         ...prevHold,
         hold: false
       }));
-    } else if (Math.random() < 0.5) { // randomize order of num1 and num2
+    } else if (Math.random() < 0.5) { // if no held problem, randomize order of num1 and num2
       setProblem((prevProblem) => ({ 
         ...prevProblem,
         num1: newNum1,
@@ -180,7 +180,7 @@ const Add = () => {
     const type = logic.sequence[logic.step][0];
     let target; //logic for message describing fact family
     if (type >= 7) {
-      target = "mixed addition"
+      target = "double digits"
     } else if (type === 0) {
       target = "+1s";
     } else if (type === 1) {
@@ -217,12 +217,12 @@ const Add = () => {
     let newArray = [];
     for (let i = 0; i < 47; i++) {
       if (i % 2 === 0) {
-        newArray.push(current);
+        newArray.push(current); //every other problem pushes target fact family
       } else {
-        const solvedProblems = [...logic.sequence].slice(0, logic.step);
-        const easyProblems = [...solvedProblems,[0,0],[1,0],[4,0]]
+        const solvedProblems = [...logic.sequence].slice(0, logic.step); //pull problems solved so far
+        const easyProblems = [...solvedProblems,[0,0],[1,0],[4,0]] //pull +1, +2, +0 as default mix
         const randomIndex = Math.floor(Math.random() * (logic.step + 3));
-        newArray.push(easyProblems[randomIndex]);
+        newArray.push(easyProblems[randomIndex]); //randomize problems above
       }
     }
     
@@ -245,7 +245,7 @@ const Add = () => {
   };
 
   const checkAnswer = () => {
-    if (messages.message1 === 'Correct!') {
+    if (messages.message1 === 'Correct!') { //logic to avoid spamming enter issues
       return;
     }
     
