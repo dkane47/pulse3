@@ -102,15 +102,15 @@ function About() {
         <p>Sure.</p>
         <ul>
           <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page (pulsemath.com/add or pulsemath.com/multiply).</li>
-          <li>Click "Ready?" when you're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
-          <li>Students will see a sequence of 45 problems.</li>
+          <li>Students will click "Ready?" when they're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
+          <li>Students will see a problem and a countdown telling them they have 45 problems left.</li>
           <li>They will start in analyzing mode. Analyzing mode gives students one question each from a series of fact families. 
-            The order of fact families is different every time.</li>
-          <li>If students get four questions right in a row in a fact family they "level up," for instance from multiplication to division, then "fill-in-the-blank" multiplication, then "fill-in-the-blank" division.</li>
+            The order of the fact families is different every time, but always begins with addition or multiplication.</li>
+          <li>If students get four questions right in a row they "level up" to the next operation, for instance from multiplication to division, then "fill-in-the-blank" multiplication, then "fill-in-the-blank" division.</li>
           <li>Students have 3.5 seconds to answer each question for the first operation, though there's no visible timer on the screen. This time decreases slowly as they move through more operations</li>
-          <li>If students get a question wrong or answer slowly they switch to practice mode for that problem.</li>
-          <li>In practice mode, half the questions are on that fact family, and the other half are a mix of questions from fact families they've seen.</li>
-          <li>If students make a mistake in the first fact family they will see practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
+          <li>If students get a question wrong or answer slowly they switch to practice mode for that fact family.</li>
+          <li>In practice mode, half the questions are on that fact family and the other half are a mix of questions from fact families they've seen.</li>
+          <li>If students make a mistake on the first fact family they will see practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
           <li>In practice mode, if students make a mistake or answer slowly on the fact family they are working on they will see that problem again two questions later.</li>
           <li>Problems are random, but students will typically see each problem from that fact family multiple times each in a pracice session to encourage successful retrieval practice.</li>
           <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
