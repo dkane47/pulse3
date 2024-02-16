@@ -61,13 +61,13 @@ const Multiply = () => {
   }, []);
   
   React.useEffect(() => { //function for level up and timeToTarget adjustments
-    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 34 && !displaySettings.switched) { //level up logic
+    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 18 && !displaySettings.switched) { //level up logic
       setIsLevelUpVisible(true); // Make the Level Up message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if (logic.step % 4 === 1 && logic.step < 14 && !displaySettings.switched) { //logic for reducing timeToTarget
+    if (logic.step % 4 === 1 && logic.step < 10 && !displaySettings.switched) { //logic for reducing timeToTarget
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500); //reduce time after first problem and after first three level ups
     }
   }, [logic.step, displaySettings.switched]); //dependency array

@@ -68,7 +68,7 @@ const Add = () => {
       setIsLevelUpVisible(false); // Turn off
     }
 
-    if ( (logic.step % 4 === 0 || logic.step === 1) && logic.step < 13 && !displaySettings.switched) { //logic for time decrements
+    if (logic.step % 4 === 1 && logic.step < 10 && !displaySettings.switched) { //logic for time decrements
       setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
     }
   }, [logic.step, displaySettings.switched]);
