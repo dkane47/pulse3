@@ -1,5 +1,4 @@
 import React from 'react';
-import _throttle from 'lodash/debounce';
 import './App.css';
 
 const Add = () => {
@@ -410,9 +409,6 @@ const ProblemDisplay = ({//component that displays the meat of the app
 
 const Input = ({ userAnswer, setUserAnswer, checkAnswer }) => {
   const inputRef = React.useRef(null); // Create a ref for the input element
-
-  // Throttle the checkAnswer function with a delay
-  const throttledCheckAnswer = _throttle(checkAnswer, 300);
   
   React.useEffect(() => {
     if (inputRef.current) {
@@ -426,7 +422,7 @@ const Input = ({ userAnswer, setUserAnswer, checkAnswer }) => {
   
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' || e.key === ' ' || e.key === '=') {
-      throttledCheckAnswer();
+      checkAnswer();
     }
   };
   
