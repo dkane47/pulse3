@@ -5,14 +5,7 @@ const Add = () => {
   //state variables
   //logic - sequence, step, operation
   const [logic, setLogic] = React.useState({
-    sequence: [//first number is the problem, 
-      [0,0], [1,0], [2,0], [3,0], [4,0], [5,0], [6,0], //addition sequence
-      [0,1], [1,1], [2,1], [3,1], [4,1], [5,1], [6,1], //subtraction sequence
-      [0,2], [1,2], [2,2], [3,2], [4,2], [5,2], [6,2], //addition fill-in-the-blank
-      [0,3], [1,3], [2,3], [3,3], [4,3], [5,3], [6,3], //subtraction fill-in-the-blank
-      [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], //multi-digit
-      [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0]
-    ],
+    sequence: [],
     step: -1 //default step
   });
   
@@ -50,7 +43,7 @@ const Add = () => {
   const [timeToTarget, setTimeToTarget] = React.useState(4000);
 
   React.useEffect(() => {
-    let numbers = [0,1,2,3,4,5,6];
+    let numbers = [0,1,2,3,5,6];
     let s = numbers.slice().sort(() => Math.random() - 0.5);
     setLogic((prevLogic) => ({
       ...prevLogic,
@@ -59,12 +52,11 @@ const Add = () => {
         [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //subtraction
         [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank addition
         [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //fill-in-the-blank subtraction
-        [s[4],0], [s[5],0], [s[6],0],  //addition r2
-        [s[4],1], [s[5],1], [s[6],1],  //subtraction r2
-        [s[4],2], [s[5],2], [s[6],2],  //fill-in add r2
-        [s[4],3], [s[5],3], [s[6],3],  //fill-in sub r2
-        [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], [7,0], //multi-digit
-        [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8,0], [8.0]
+        [s[4],0], [s[4],1], [s[4],2], [s[4],3], 
+        [s[5],0], [s[5],1], [s[5],2], [s[5],3],
+        [6,0], [6,1], [6,2], [6,3],
+        [7,0], [7,0], [7,1], [7,1], [7,2], [7,2], [7,3], [7,3], //multi-digit
+        [8,0], [8,0], [8,1], [8,1], [8,2], [8,2], [8,3], [8,3], [8,0], [8,0], [8,0], [8.0]
       ]
     }));
   }, []);
