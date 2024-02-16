@@ -6,15 +6,15 @@ const Multiply = () => {
   //state variables
   //logic - sequence, step
   const [logic, setLogic] = React.useState({
-    sequence: [],
-    step: -1 //default step,
+    sequence: [], //empty - initialized later via useEffect
+    step: -1 //default step, steps to 0 when user clicks Ready
   });
   
   //problem - numbers, answer, startTime, operation
   const [problem, setProblem] = React.useState({
     num1: 0, // First number in the problem
     num2: 0, // Second number in the problem,
-    operation: 0,
+    operation: 0, //operation - 0 is mult, 1 is div, 2 is fill-in mult, 3 is fill-in div
     userAnswer: '', // User's answer to the problem
     startTime: 0 // Timestamp when the problem started
   });
@@ -29,7 +29,7 @@ const Multiply = () => {
   //displaysettings
   const [displaySettings, setDisplaySettings] = React.useState({
     showContent: false, // Determines whether to show the main content or introduction
-    totalProblems: 44, // Total number of problems the user will encounter
+    totalProblems: 44, // Total number of problems the user will encounter - actually 45 bc 0
     switch: false, // boolean signaling that a user got a question wrong, and should switch modes once corrected
     switched: false // boolean signaling that practice mode has begun
   });
@@ -44,35 +44,35 @@ const Multiply = () => {
   const [timeToTarget, setTimeToTarget] = React.useState(4000); //default time for an answer to count as "fast"
 
   React.useEffect(() => {
-    let numbers = [2,3,4,5,6,9,10,11];
-    let s = numbers.slice().sort(() => Math.random() - 0.5);
-    setLogic((prevLogic) => ({
+    let numbers = [2,3,4,5,6,9,10,11]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
+    let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
+    setLogic((prevLogic) => ({ //use random list to generate a random sequence of problems
       ...prevLogic,
-      sequence: [[s[0],0], [s[1],0], [s[2],0], [s[3],0],  //multiplication r1
+      sequence: [[s[0],0], [s[1],0], [s[2],0], [s[3],0],  //multiplication
       [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //division
       [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank multiplication
       [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //division
-      [s[4],0], [s[4],1], [s[4],2], [s[4],3],  //
-      [s[5],0], [s[5],1], [s[5],2], [s[5],3],  //
-      [s[6],0], [s[6],1], [s[6],2], [s[6],3],  //
-      [s[7],0], [s[7],1], [s[7],2], [s[7],3],  //
+      [s[4],0], [s[4],1], [s[4],2], [s[4],3],  //random mix of operations
+      [s[5],0], [s[5],1], [s[5],2], [s[5],3],  
+      [s[6],0], [s[6],1], [s[6],2], [s[6],3],  
+      [s[7],0], [s[7],1], [s[7],2], [s[7],3],  
       [12,0], [25,0], [15,0], [16,0], [18,0], [21,0], [22,0], [31,0], [13,0], [14,0], [17,0], [19,0], [45,0], [35,0]] //bonus challenges
     }));
   }, []);
   
   React.useEffect(() => { //function for level up and timeToTarget adjustments
     if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 34 && !displaySettings.switched) { //level up logic
-      setIsLevelUpVisible(true); // Make the message visible
+      setIsLevelUpVisible(true); // Make the Level Up message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
     }
 
     if (logic.step % 4 === 1 && logic.step < 14 && !displaySettings.switched) { //logic for reducing timeToTarget
-      setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500);
+      setTimeToTarget((prevTimeToTarget) => prevTimeToTarget - 500); //reduce time after first problem and after first three level ups
     }
-  }, [logic.step, displaySettings.switched]);
+  }, [logic.step, displaySettings.switched]); //dependency array
 
-  // Inside useEffect, add handleOperationChange to the dependency array:
+  // Core logic, generates a new problem when step is incremented
   React.useEffect(() => {
     if (logic.step === -1) { //don't try to do anything before stepping to 0
       return;
@@ -81,43 +81,43 @@ const Multiply = () => {
     // pull first number and operation from sequence
     let newNum1 = logic.sequence[logic.step][0];
     if (newNum1 === 6) {
-      newNum1 = Math.floor(Math.random() * 3 + 6);
+      newNum1 = Math.floor(Math.random() * 3 + 6); //for 6 number can be 6, 7, or 8
     }
-    let op = logic.sequence[logic.step][1];
+    let op = logic.sequence[logic.step][1]; //pull operation
     
     // generate second number randomly with some logic based on size
     let newNum2;
-    if (newNum1 === 0) {
+    if (newNum1 === 0) { //0 x 0-11
       newNum2 = Math.floor(Math.random() * 12);
-    } else if (newNum1 === 1) {
+    } else if (newNum1 === 1) { //1 x 1-11
       newNum2 = Math.floor(Math.random() * 11 + 1);
-    } else if (newNum1 === 2) {
+    } else if (newNum1 === 2) { //2 x 2-8
       newNum2 = Math.floor(Math.random() * 7 + 2);
-    } else if (newNum1 === 3) {
+    } else if (newNum1 === 3) { //3 x 3-8
       newNum2 = Math.floor(Math.random() * 6 + 3);
-    } else if (newNum1 === 4) {
+    } else if (newNum1 === 4) { //4 x 4-8
       newNum2 = Math.floor(Math.random() * 5 + 4);
-    } else if (newNum1 === 5) {
+    } else if (newNum1 === 5) { //5 x 4-8
       newNum2 = Math.floor(Math.random() * 5 + 4);
-    } else if (newNum1 === 6) {
+    } else if (newNum1 === 6) { //6 x 6,7,8
       newNum2 = Math.floor(Math.random() * 3 + 6);
-    } else if (newNum1 === 7) {
+    } else if (newNum1 === 7) { //7 x 7,7
       newNum2 = Math.floor(Math.random() * 2 + 7);
-    } else if (newNum1 === 8) {
+    } else if (newNum1 === 8) { //8 x 8
       newNum2 = 8
-    } else if (newNum1 === 9) {
+    } else if (newNum1 === 9) { //9 x 2-9
       newNum2 = Math.floor(Math.random() * 8 + 2);
-    } else if (newNum1 === 10) {
+    } else if (newNum1 === 10) { //10 x 2-10
       newNum2 = Math.floor(Math.random() * 9 + 2);
-    } else if (newNum1 === 11) {
+    } else if (newNum1 === 11) { //11 x 2-9
       newNum2 = Math.floor(Math.random() * 8 + 2);
-    } else {
-      newNum2 = Math.floor(Math.random() * 8 + 2);
+    } else { //2-10 for all others
+      newNum2 = Math.floor(Math.random() * 9 + 2);
     }
     
     // if there is a held problem, set the problem to the held problem
     if (holdData.hold && logic.step % 2 === 0) { 
-      setProblem((prevProblem) => ({
+      setProblem((prevProblem) => ({ //logic to put held problem in problem logic
         ...prevProblem,
         num1: holdData.held[0],
         num2: holdData.held[1],
@@ -129,7 +129,7 @@ const Multiply = () => {
         ...prevHold,
         hold: false
       }));
-    } else if (Math.random() < 0.5) { // randomize order of num1 and num2
+    } else if (Math.random() < 0.5) { // no held problem - randomize order of num1 and num2
       setProblem((prevProblem) => ({ 
         ...prevProblem,
         num1: newNum1,
@@ -151,11 +151,12 @@ const Multiply = () => {
   }, [logic.step, logic.sequence]); 
   
   const generateProblem = () => { //logic to trigger useEffect and generate a problem
-    setLogic((prevLogic) => ({ //bump step forward
+    setLogic((prevLogic) => ({ //bump step forward to trigger useEffect
       ...prevLogic,
       step: prevLogic.step + 1
     }));
     
+    //logic for messages
     let numLeft = displaySettings.totalProblems - logic.step; //countdown
     let problem; //plural logic for problem/problems
     if (numLeft > 1) {
@@ -190,14 +191,14 @@ const Multiply = () => {
       problem = " problem"
     }
     
-    if (target[0] !== 6) {
+    if (target[0] !== 6) { //messages if fact family is not 6 - fact family is straightforward
       setMessages((prevMessages) => ({
         ...prevMessages,
         message1: 'Solve it!',
         message2: "You are working on " + target[0].toString() + "s today",
         countdown: numLeft.toString() + problem + " left"
       }));
-    } else {
+    } else { //logic if fact family is 6 (which is really 6/7/8)
       setMessages((prevMessages) => ({
         ...prevMessages,
         message1: 'Solve it!',
@@ -211,12 +212,12 @@ const Multiply = () => {
     let newArray = [];
     for (let i = 0; i < 47; i++) {
       if (i % 2 === 0) {
-        newArray.push(target);
-      } else {
-        const solvedProblems = [...logic.sequence].slice(0, logic.step);
-        const easyProblems = [...solvedProblems,[2,0],[10,0],[1,0],[0,0]]
-        const randomIndex = Math.floor(Math.random() * (logic.step + 4));
-        newArray.push(easyProblems[randomIndex]);
+        newArray.push(target); //push target fact family every other problem
+      } else { //push random problem
+        const solvedProblems = [...logic.sequence].slice(0, logic.step); //pull problems solved so far
+        const easyProblems = [...solvedProblems,[2,0],[10,0],[1,0],[0,0]] //append 2s, 10s, 1s, 0s
+        const randomIndex = Math.floor(Math.random() * (logic.step + 4)); 
+        newArray.push(easyProblems[randomIndex]); //mix those last two groups
       }
     }
     
@@ -236,7 +237,7 @@ const Multiply = () => {
   };
 
   const checkAnswer = () => {
-    if (messages.message1 === 'Correct!') {
+    if (messages.message1 === 'Correct!') { //prevent spamming enter triggering the function during pause
       return;
     }
     
@@ -307,13 +308,13 @@ const Multiply = () => {
   };
 
   return (
-    <div className="app" id="app">
-      {isLevelUpVisible && (
+    <div className="app" id="app"> 
+      {isLevelUpVisible && ( /* logic for level up message*/ 
         <div className="level-up-message">
           Level Up!
         </div>
       )}
-      {logic.step <= displaySettings.totalProblems ? (
+      {logic.step <= displaySettings.totalProblems ? ( /*Logic for whether to show introduction or problems*/
         !displaySettings.showContent ? (
           <Introduction onReadyClick={handleReadyClick} /> //display intro text and button
         ) : (
@@ -361,7 +362,7 @@ const ProblemDisplay = ({
   }) => {
   const ans = num1 * num2;
 
-  let displayEquation, result;
+  let displayEquation, result; //Logic for which operation to display
   if (operation === 0) {
     displayEquation = `${num1} × ${num2} = `;
     result = '';
@@ -376,7 +377,7 @@ const ProblemDisplay = ({
     result = ` = ${num1}`;
   }
 
-  return (
+  return ( //problem display: problem/input and three messages
     <div className="practice">
       <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
       </div>
