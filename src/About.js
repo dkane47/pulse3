@@ -104,7 +104,7 @@ function About() {
         <p>Sure.</p>
         <ul>
           <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page 
-            (<a href="pulsemath.com/add">pulsemath.com/add</a> or <a href="pulsemath.com/multiply">pulsemath.com/multiply</a>).</li>
+            (<a href="/add">pulsemath.com/add</a> or <a href="/multiply">pulsemath.com/multiply</a>).</li>
           <li>Students will click "Ready?" when they're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
           <li>Students will see a problem and a countdown telling them they have 45 problems left.</li>
           <li>They will start in analyzing mode. Analyzing mode gives students one question each from a series of fact families. 
