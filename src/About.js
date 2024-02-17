@@ -8,11 +8,13 @@ function About() {
           Retrieval practice means retrieving the thing from memory, not using a strategy or being told the answer. 
           Pulse is designed to help students retrieve facts from memory. First, it figures out a fact family students are having a hard time with. 
           Then, students do some practice focused on that fact family. 
-          For any fact in the fact family they don't know, students practice that fact again two questions later. 
+          Some focused repetition on one fact family helps students to practice retrieving those facts successfully. 
+          The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
+          For any fact in the target fact family they don't know, students practice that fact again two questions later. 
           If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
         </p>
         <hr></hr>
-        <h2>How does Pulse figure out if a student knows a fact, rather than finding it by skip-counting or another strategy?</h2>
+        <h2>How does Pulse figure out if a student knows a fact?</h2>
         <p>Pulse identifies fact families to focus on when a student either gets a question wrong or takes too long to answer. 
           Speed is a decent proxy for having facts in long-term memory. If a student needs five seconds to remember a fact they could benefit from more retrieval practice. 
           Pulse doesn't pressure students to solve problems quickly. Telling someone to go faster doesn't necessarily help them commit facts to memory. 
@@ -51,9 +53,10 @@ function About() {
         <hr></hr>
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
         <p>That will happen. Pulse is probabibilistic. Students will 
-          often spend their time on a fact family they aren't as good at, but they might just have
+          often spend their time on a fact family they need practice with, but they might just have
           been chatting with a friend as they got started or made a silly mistake and Pulse thought they needed to practice that fact family. That's fine. 
-          They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day.
+          They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day. 
+          The order of the fact families is random, so students will see all facts over time.
         </p>
         <hr></hr>
         <h2>Who are you?</h2>
@@ -100,7 +103,8 @@ function About() {
         <h2>Can you give a more detailed description of how Pulse works?</h2>
         <p>Sure.</p>
         <ul>
-          <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page (pulsemath.com/add or pulsemath.com/multiply).</li>
+          <li>Click on the link to addition or multiplication practice, or give students a direct link to the practice page 
+            (<a href="pulsemath.com/add">pulsemath.com/add</a> or <a href="pulsemath.com/multiply">pulsemath.com/multiply</a>).</li>
           <li>Students will click "Ready?" when they're ready to go. The goal is to solve the problems quickly, so make sure students are ready!</li>
           <li>Students will see a problem and a countdown telling them they have 45 problems left.</li>
           <li>They will start in analyzing mode. Analyzing mode gives students one question each from a series of fact families. 
@@ -114,6 +118,14 @@ function About() {
           <li>Problems are random, but students will typically see each problem from that fact family multiple times each in a pracice session to encourage successful retrieval practice.</li>
           <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
         </ul>
+        <hr></hr>
+        <h2>What are the fact families that Pulse uses?</h2>
+        <p>For addition, the fact families are +0, +1, +2, doubles, near doubles (i.e. 4+5, 6+7), +3s and 4s, and +5s through +8s. 
+          Those later fact families seem bigger but most facts with 5s through 8s fall into one of the other families. 
+          For multiplication, the fact families are x0, x1, x2, x3, x4, x5, x6/7/8, x9, x10, and x11. 
+          Same thing -- most 6s, 7s, and 8s are covered by one of the other fact families. 
+          If students get through all of those they will work on two digit by two digit addition, or some larger multiplication facts like x12, x25, x15, and more.
+          </p>
       </div>
       
     );
