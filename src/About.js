@@ -18,9 +18,9 @@ function About() {
           Retrieval practice means retrieving the thing from memory, not using a strategy or being told the answer. 
           Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students are having a hard time with. 
           Then, students do some practice focused on that fact family. 
-          Some focused repetition on one fact family helps students to practice retrieving those facts successfully. 
+          Focused repetition on one fact family helps students to practice retrieving those facts successfully. 
           The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
-          For any fact in the target fact family they don't know, students practice that fact again two questions later. 
+          If students don't know a fact in the target fact family, they practice that fact again two questions later. 
           If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
         </p>
         <hr></hr>
