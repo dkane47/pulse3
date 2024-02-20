@@ -5,12 +5,12 @@ function About() {
       <div className="about">
         <h2>What makes Pulse different from other math practice apps?</h2>
         <p>
-          Pulse gives students a short, focused, manageable chunk of practice to make steady, incremental progress toward fact fluency. 
-          The app balances repetition with facts in a single fact family each session and a mix of more familiar practice. 
-          Students can make progress with a set of facts without being overwhelmed by too many new facts at once. 
-          Pulse doesn't use visuals or other representations of arithmetic. 
+          Pulse gives students a short, focused, and manageable chunk of practice to help them make steady progress toward fact fluency. 
+          The app balances repetition with facts in a single fact family and a mix of more familiar practice in each session. 
+          Students can make progress with one fact family without being overwhelmed by too many new facts at once. 
+          <br></br><br></br>Pulse doesn't use visuals or other representations of arithmetic. 
           Visuals play an important role when students are first learning about arithmetic, but they can lead to inefficient strategies while students should be committing facts to long-term memory. 
-          Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. 
+          <br></br><br></br>Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. 
         </p>
         <hr></hr>
         <h2>Why is repetition of a single fact family imortant?</h2>
