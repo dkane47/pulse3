@@ -78,7 +78,7 @@ code {
   display: flex;
   flex-direction: row;
   align-items: center; /* Align the items vertically */
-  font-size: 24px; /* Decrease font size */
+  font-size: 26px;
   font-weight: bold;
   color: #602f6b;
   padding: 10px;
@@ -103,7 +103,7 @@ input[type="number"] {
   width: 50px;
   border: none;
   outline: none;
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
   color: #602f6b;
   background-color: transparent; /* Make the input field transparent */
