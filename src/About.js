@@ -3,10 +3,20 @@ import React from 'react';
 function About() {
     return (
       <div className="about">
-        <h2>What is Pulse?</h2>
+        <h2>What makes Pulse different from other math practice apps?</h2>
+        <p>
+          Pulse gives students a short, focused, manageable chunk of practice to make steady, incremental progress toward fact fluency. 
+          The app balances repetition with facts in a single fact family each session and a mix of more familiar practice. 
+          Students can make progress with a set of facts without being overwhelmed by too many new facts at once. 
+          Pulse doesn't use visuals or other representations of arithmetic. 
+          Visuals play an important role when students are first learning about arithmetic, but they can lead to inefficient strategies while students should be committing facts to long-term memory. 
+          Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. 
+        </p>
+        <hr></hr>
+        <h2>Why is repetition of a single fact family imortant?</h2>
         <p>Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
           Retrieval practice means retrieving the thing from memory, not using a strategy or being told the answer. 
-          Pulse is designed to help students retrieve facts from memory. First, it figures out a fact family students are having a hard time with. 
+          Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students are having a hard time with. 
           Then, students do some practice focused on that fact family. 
           Some focused repetition on one fact family helps students to practice retrieving those facts successfully. 
           The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
@@ -27,28 +37,24 @@ function About() {
         </p>
         <hr></hr>
         <h2>Shouldn't students learn math facts with understanding? This seems like rote memorization.</h2>
-        <p>Students definitely need to understand arithmetic. Pulse isn't designed to <i>teach</i> facts, it's designed to <i>practice</i> facts. 
-        Once students undertand the arithmetic operations they still have a few hundred specifics facts to remember. 
-        That's a lot! You should absolutely teach your students to understand addition, subtraction, multiplication, and division. 
+        <p>Students definitely need to understand arithmetic. That's what teachers are for. Pulse isn't designed to <i>teach</i> facts, it's designed to <i>practice</i> facts. 
+        Once students undertand the basics of arithmetic they still have a few hundred specifics facts to remember. 
+        That's a lot! You should absolutely teach your students to understand the properties of addition, subtraction, multiplication, and division. 
         If your experience is like mine, even after students understand the operations they need more practice to commit facts to long-term memory. That's what Pulse is designed for.
         </p>
         <hr></hr>
         <h2>Is there research that supports Pulse?</h2>
-        <p>Pulse is informed by lots of research on retrieval practice, incremental practice, and interleaving. 
+        <p>Pulse is informed by research on retrieval practice, incremental rehearsal, and interleaving. 
           Research hasn't found the perfect way to teach multiplication facts. Reasonable people disagree about the best way to structure fact practice based on research. 
-          Pulse is also informed by classroom testing to balance research and practicality. 
-        </p>
-        <hr></hr>
-        <h2>So I can put my students on the app and they'll learn their math facts?</h2>
-        <p>I recommend coaching students on how to use the app. They should understand the goal is to remember 
-          math facts without having to think about them. I also recommend paying attention to patterns in 
-          fact families that students are having a hard time with and providing extra support with those.
+          Pulse is also informed by classroom testing to be practical and easy to use while also using insights from research. 
         </p>
         <hr></hr>
         <h2>Do you guarantee that every student will master their math facts with Pulse?</h2>
         <p>Nope. There are no shortcuts to fact fluency. 
           Pulse can be a helpful tool, especially with students who feel overwhelmed by other forms of fact practice.
           But there are never any guarantees, and Pulse only works as one component of well-designed classroom instruction. 
+          I recommend coaching students on how to use the app for best results. 
+          Students should understand that the goal is to remember math facts without having to derive them.
         </p>
         <hr></hr>
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
@@ -63,7 +69,7 @@ function About() {
         <p>My name is Dylan Kane. I'm a 7th grade math teacher in Colorado. You can get in touch at dkane47 at gmail</p>
         <hr></hr>
         <h2>How do you use Pulse with your students?</h2>
-        <p>I assign either Pulse Addition or Pulse Multiplication twice a week. I do some progress monitoring using paper and pencil to 
+        <p>I assign Pulse twice a week. Students do it in class before another activity on their Chromebooks. I do some progress monitoring using paper and pencil to 
           figure out which operations we should focus on. I do a fair amount of coaching, both when we first start Pulse and as I 
           observe students working, to help them understand how to improve their recall of math facts. 
         </p>
@@ -77,27 +83,20 @@ function About() {
         <hr></hr>
         <h2>What should I do to help students who don't make progress?</h2>
         <p>Teach them! Pulse is a good tool for practice once students have a decent foundation. 
-          Pulse is not a substitute for teaching about arithmetic operations. 
+          Pulse is not a substitute for teaching. 
           If students aren't making progress, help them see patterns in the fact families they are often working on. 
         </p>
         <hr></hr>
         <h2>Why not have students sign in and track their progress?</h2>
         <p>I prefer a tool that is simple to use. I can see what students are working on by walking around and looking at their screens. 
           Students don't always make nice linear progress in their fact knowledge. 
-          I don't think tracking progress on this type of practice is very helpful.
+          I don't find that tracking progress on this type of practice is very helpful.
         </p>
         <hr></hr>
         <h2>Why not make it a game?</h2>
         <p>Practice is important. I don't think it's helpful to pretend that practice is a game. 
           Practice is necessary for learning, and we should be honest with students about that. 
           Pulse is short, tyically 2-4 minutes per day, and I have no issue asking students to do a bit of practice to sharpen their math skills.
-        </p>
-        <hr></hr>
-        <h2>Why not use visuals to show how multiplication works?</h2>
-        <p>Visuals are a great tool to help students understand arithmetic when they're first starting out. 
-          That's not what Pulse is designed for. Pulse is designed for students who have been introduced to arithemtic operations 
-          and need more practice to commit those facts to memory. For students in that situation, visuals can be an obstacle 
-          because they encourage students to solve by thinking about the visual rather than retrieving the fact from memory.
         </p>
         <hr></hr>
         <h2>Can you give a more detailed description of how Pulse works?</h2>
