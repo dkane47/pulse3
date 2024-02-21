@@ -1,6 +1,22 @@
 import React from 'react';
 import './App.css';
 
+/** 
+ * Big-picture structure of this app:
+ * This is an addition fact practice app. It is live at pulsemath.com/add, and you can read about how it works at pulsemath.com/about
+ * Below are some state variables that control the logic the app.
+ * The first useEffect function sets up the sequence of problems.
+ * The second useEffect function handles a few pieces of logic as the user answers questions.
+ * The third useEffect function handles the logic of generating a new problem when step is incremented by other functions.
+ * generateProblem increments the step and handles a few other pieces of logic each time the user gets a question right.
+ * targetedPractice handles the logic of switching from analyzing mode to practice mode.
+ * checkAnswer handles the logic when an answer is submitted and triggers other functions as appropriate.
+ * hold handles the logic for repeating a problem when necessary.
+ * handleReadyClick controls the logic for beginning a practice session.
+ * The app itself consists of Introduction, ProblemDisplay, and CompletionMessage components. 
+ * Within ProblemDisplay is one additional Input component. 
+ * **/
+
 const Add = () => {
   //state variables
   //logic - sequence, step, operation
