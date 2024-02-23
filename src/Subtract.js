@@ -64,21 +64,19 @@ const Subtract = () => {
     setLogic((prevLogic) => ({ //build sequence
       ...prevLogic,
       sequence: [
-        [s[0],1], [s[1],1], [s[2],1], [s[3],1],  //addition
-        [s[0],3], [s[1],3], [s[2],3], [s[3],3],   //subtraction
-        [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank addition
-        [s[0],0], [s[1],0], [s[2],0], [s[3],0],  //fill-in-the-blank subtraction
-        [s[4],0], [s[4],1], [s[4],2], [s[4],3], //random mix
-        [s[5],0], [s[5],1], [s[5],2], [s[5],3],
-        [6,0], [6,1], [6,2], [6,3], //extra 5s-8s
-        [7,0], [7,0], [7,1], [7,1], [7,2], [7,2], [7,3], [7,3], //multi-digit
-        [8,0], [8,0], [8,1], [8,1], [8,2], [8,2], [8,3], [8,3], [8,0], [8,0], [8,0], [8.0]
+        [s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1],
+        [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3],
+        [s[0],2], [s[1],2], [s[2],2], [s[3],2], [s[4],2], [s[5],2],
+        [s[0],0], [s[1],0], [s[2],0], [s[3],0], [s[4],0], [s[5],0], //addition
+        [6,1], [6,3], [6,2], [6,0], //extra 5s-8s
+        [7,1], [7,1], [7,3], [7,3], [7,2], [7,2], [7,0], [7,0], //multi-digit
+        [8,1], [8,1], [8,3], [8,3], [8,2], [8,2], [8,0], [8,0], [8,1], [8,1], [8,1], [8,1]
       ]
     }));
   }, []);
 
   React.useEffect(() => {
-    if (logic.step % 4 === 0 && logic.step > 0 && logic.step < 17 && !displaySettings.switched) { //logic for level up message
+    if (logic.step % 6 === 0 && logic.step > 0 && logic.step < 25 && !displaySettings.switched) { //logic for level up message
       setIsLevelUpVisible(true); // Make the message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
@@ -236,7 +234,7 @@ const Subtract = () => {
         newArray.push(current); //every other problem pushes target fact family
       } else {
         const solvedProblems = [...logic.sequence].slice(0, logic.step); //pull problems solved so far
-        const easyProblems = [...solvedProblems,[0,0],[1,0],[4,0]] //pull +1, +2, +0 as default mix
+        const easyProblems = [...solvedProblems,[0,1],[1,1],[4,1]] //pull +1, +2, +0 as default mix
         const randomIndex = Math.floor(Math.random() * (logic.step + 3));
         newArray.push(easyProblems[randomIndex]); //randomize problems above
       }

@@ -11,16 +11,17 @@ function About() {
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
           Visuals play an important role when students are first learning about arithmetic, but they can lead to inefficient strategies while students should be committing facts to long-term memory. </li>
           <li>Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. </li>
+          <li>At a basic level, Pulse is 45 questions of fact practice per day with a bit more focus and repetition than most other fact apps.</li>
         </ul>
         <hr></hr>
         <h2>Why is repetition of a single fact family imortant?</h2>
         <p>Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
           Retrieval practice means retrieving the thing from memory, not using a strategy to derive the answer. 
-          Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students are having a hard time with. 
+          Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students could use some practice on. 
           Then, students do some focused practice on that fact family. 
-          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving with facts students know pretty well is more helpful than pure repetition. 
+          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving those with facts students know pretty well is more helpful than pure repetition. 
           The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
-          If students don't know a fact in the target fact family, they practice that fact again two questions later. 
+          If students don't know a fact in the target fact family they practice that fact again two questions later. 
           If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
         </p>
         <hr></hr>
@@ -53,9 +54,10 @@ function About() {
         <p>Nope. There are no shortcuts to fact fluency. 
           Pulse can be a helpful tool, especially with students who feel overwhelmed by other forms of fact practice.
           But there are never any guarantees, and Pulse only works as one component of well-designed classroom instruction. 
-          Pulse also works best for students who know a few of the easier facts. If they are just starting out, they probably need some extra support to get going. 
           I recommend coaching students on how to use the app for best results. 
-          Students should understand that the goal is to remember math facts without having to derive them.
+          Students should understand that the goal is to remember math facts without having to derive them. 
+          Pulse also works best for students who know a few of the easier facts. If they are just starting out, they probably need some extra support to get going. 
+          If students have a grasp of most x2 and x10 facts they are probably ready to use Pulse.
         </p>
         <hr></hr>
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
@@ -64,6 +66,14 @@ function About() {
           been chatting with a friend as they got started or made a silly mistake and Pulse thought they needed to practice that fact family. That's fine. 
           They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day. 
           The order of the fact families is random, so students will see all facts over time.
+        </p>
+        <hr></hr>
+        <h2>What about subtraction and division?</h2>
+        <p>I recommend focusing on the addition and multiplication apps. 
+          As students progress and develop automaticity with those facts they will see more subtraction and division mixed in. 
+          The best way to get good at subtraction or division is to get good at addition or multiplication first. 
+          If you would like to focus specifically on those operations, you can go to <a href="/subtract">pulsemath.com/subtract</a> or <a href="/divide">pulsemath.com/divide</a>. 
+          I use these with my students occasionally, but I really recommend the addition and multiplication apps as students' primary focus.
         </p>
         <hr></hr>
         <h2>Who are you?</h2>
@@ -79,7 +89,7 @@ function About() {
         <p>Help them understand that they should try to answer as fast as they can, but if they can't remember a fact that's fine. 
           They'll get some focused practice on that fact and similar facts. Also, help students understand that, if they get facts in their 
           target fact family wrong or answer slowly, that fact will repeat two problems later. That's a great chance to practice remembering it! 
-          Make sure students aren't just hitting enter and copying answers every time. 
+          Also, make sure students aren't just hitting enter and copying answers every time. 
         </p>
         <hr></hr>
         <h2>What should I do to help students who don't make progress?</h2>
@@ -123,8 +133,8 @@ function About() {
         <p>For addition, the fact families are +0, +1, +2, doubles, near doubles (i.e. 4+5, 6+7), +3s and 4s, and +5s through +8s. 
           Those later fact families seem bigger but most facts with 5s through 8s fall into one of the other families. 
           For multiplication, the fact families are x0, x1, x2, x3, x4, x5, x6/7/8, x9, x10, and x11. 
-          Same thing -- most 6s, 7s, and 8s are covered by one of the other fact families. 
-          If students get through all of those they will work on two digit by two digit addition, or some larger multiplication facts like x12, x25, x15, and more.
+          Same thing - most 6s, 7s, and 8s are covered by one of the other fact families. 
+          If students get through all of those they will work on two digit by two digit addition, or some larger multiplication facts like x12, x25, x15, etc.
           </p>
       </div>
       

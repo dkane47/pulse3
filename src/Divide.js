@@ -63,20 +63,16 @@ const Divide = () => {
     let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
     setLogic((prevLogic) => ({ //use random list to generate a random sequence of problems
       ...prevLogic,
-      sequence: [[s[0],1], [s[1],1], [s[2],1], [s[3],1],  //multiplication
-      [s[0],3], [s[1],3], [s[2],3], [s[3],3],   //division
-      [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank multiplication
-      [s[0],4], [s[1],4], [s[2],4], [s[3],4],  //division
-      [s[4],0], [s[5],1], [s[6],2], [s[7],3],  //random mix of operations
-      [s[5],0], [s[6],1], [s[7],2], [s[4],3],  
-      [s[6],0], [s[7],1], [s[4],2], [s[5],3],  
-      [s[7],0], [s[4],1], [s[5],2], [s[6],3],  
-      [12,0], [25,0], [15,0], [16,0], [18,0], [21,0], [22,0], [31,0], [13,0], [14,0], [17,0], [19,0], [45,0], [35,0]] //bonus challenges
+      sequence: [[s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1], [s[6],1], [s[7],1],  //multiplication
+      [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3], [s[6],3], [s[7],3],    //division
+      [s[0],2], [s[1],2], [s[2],2], [s[3],2], [s[4],2], [s[5],2], [s[6],2], [s[7],2],   //fill-in-the-blank multiplication
+      [s[0],0], [s[1],0], [s[2],0], [s[3],0], [s[4],0], [s[5],0], [s[6],0], [s[7],0],   //division  
+      [12,1], [25,1], [15,1], [16,1], [18,1], [21,1], [22,1], [31,1], [13,1], [14,1], [17,1], [19,1], [45,1], [35,1]] //bonus challenges
     }));
   }, []);
   
   React.useEffect(() => { //function for level up and timeToTarget adjustments
-    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 18 && !displaySettings.switched) { //level up logic
+    if (logic.step % 8 === 0 && logic.step > 1 && logic.step < 34 && !displaySettings.switched) { //level up logic
       setIsLevelUpVisible(true); // Make the Level Up message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
