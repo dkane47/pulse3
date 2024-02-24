@@ -5,13 +5,14 @@ function About() {
       <div className="about">
         <h2>What makes Pulse different from other math practice apps?</h2>
           <ul>
-            <li>Pulse gives students a short, focused, and manageable chunk of practice to help them make steady progress toward fact fluency. 
+            <li>Pulse gives students 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice to help them make steady progress toward fact fluency. 
           The app balances repetition with facts in a single fact family and a mix of more familiar practice in each session. 
           The goal is to make progress with one fact family without being overwhelmed by too many new facts at once. </li>
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
           Visuals play an important role when students are first learning about arithmetic, but they can lead to inefficient strategies while students should be committing facts to long-term memory. </li>
           <li>Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. </li>
-          <li>At a basic level, Pulse is 45 questions of fact practice per day with a bit more focus and repetition than most other fact apps.</li>
+          <li>If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
+          </li>
         </ul>
         <hr></hr>
         <h2>Why is repetition of a single fact family imortant?</h2>
@@ -19,10 +20,21 @@ function About() {
           Retrieval practice means retrieving the thing from memory, not using a strategy to derive the answer. 
           Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students could use some practice on. 
           Then, students do some focused practice on that fact family. 
-          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving those with facts students know pretty well is more helpful than pure repetition. 
+          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving with facts students know pretty well is more helpful than pure repetition. 
           The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
+          For instance, if a student is working on x4s, the sequence might look like this:
+          <ul>
+            <li>4×5</li>
+            <li>10×3</li>
+            <li>8×4</li>
+            <li>6×1</li>
+            <li>4×8</li>
+            <li>8×10</li>
+            <li>6×4</li>
+            <li>5×2</li>
+            <li>5×4</li>
+          </ul>
           If students don't know a fact in the target fact family they practice that fact again two questions later. 
-          If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
         </p>
         <hr></hr>
         <h2>How does Pulse figure out if a student knows a fact?</h2>
@@ -130,7 +142,7 @@ function About() {
         </ul>
         <hr></hr>
         <h2>What are the fact families that Pulse uses?</h2>
-        <p>For addition, the fact families are +0, +1, +2, doubles, near doubles (i.e. 4+5, 6+7), +3s and 4s, and +5s through +8s. 
+        <p>For addition, the fact families are +0, +1, +2, doubles, near doubles (i.e. 4+5, 6+7), +3s and +4s, and +5s through +8s. 
           Those later fact families seem bigger but most facts with 5s through 8s fall into one of the other families. 
           For multiplication, the fact families are x0, x1, x2, x3, x4, x5, x6/7/8, x9, x10, and x11. 
           Same thing - most 6s, 7s, and 8s are covered by one of the other fact families. 
