@@ -4,7 +4,7 @@ import './App.css';
 
 /** 
  * Big-picture structure of this app:
- * This is a multiplication fact practice app. It is live at pulsemath.com/multiply, and you can read about how it works at pulsemath.com/about
+ * This is a division fact practice app. It is live at pulsemath.com/divide, and you can read about how it works at pulsemath.com/about
  * Below are some state variables that control the logic the app.
  * The first useEffect function sets up the sequence of problems.
  * The second useEffect function handles a few pieces of logic as the user answers questions.
@@ -63,10 +63,10 @@ const Divide = () => {
     let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
     setLogic((prevLogic) => ({ //use random list to generate a random sequence of problems
       ...prevLogic,
-      sequence: [[s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1], [s[6],1], [s[7],1],  //multiplication
-      [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3], [s[6],3], [s[7],3],    //division
+      sequence: [[s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1], [s[6],1], [s[7],1],  //division
+      [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3], [s[6],3], [s[7],3],    //fill-in-the-blank division
       [s[0],2], [s[1],2], [s[2],2], [s[3],2], [s[4],2], [s[5],2], [s[6],2], [s[7],2],   //fill-in-the-blank multiplication
-      [s[0],0], [s[1],0], [s[2],0], [s[3],0], [s[4],0], [s[5],0], [s[6],0], [s[7],0],   //division  
+      [s[0],0], [s[1],0], [s[2],0], [s[3],0], [s[4],0], [s[5],0], [s[6],0], [s[7],0],   //multiplication  
       [12,1], [25,1], [15,1], [16,1], [18,1], [21,1], [22,1], [31,1], [13,1], [14,1], [17,1], [19,1], [45,1], [35,1]] //bonus challenges
     }));
   }, []);

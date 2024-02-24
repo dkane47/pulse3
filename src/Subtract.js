@@ -3,7 +3,7 @@ import './App.css';
 
 /** 
  * Big-picture structure of this app:
- * This is an addition fact practice app. It is live at pulsemath.com/add, and you can read about how it works at pulsemath.com/about
+ * This is a subtraction fact practice app. It is live at pulsemath.com/subtract, and you can read about how it works at pulsemath.com/about
  * Below are some state variables that control the logic the app.
  * The first useEffect function sets up the sequence of problems.
  * The second useEffect function handles a few pieces of logic as the user answers questions.
@@ -64,9 +64,9 @@ const Subtract = () => {
     setLogic((prevLogic) => ({ //build sequence
       ...prevLogic,
       sequence: [
-        [s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1],
-        [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3],
-        [s[0],2], [s[1],2], [s[2],2], [s[3],2], [s[4],2], [s[5],2],
+        [s[0],1], [s[1],1], [s[2],1], [s[3],1], [s[4],1], [s[5],1], //subtraction
+        [s[0],3], [s[1],3], [s[2],3], [s[3],3], [s[4],3], [s[5],3], //fill-in-the-blank subtraction
+        [s[0],2], [s[1],2], [s[2],2], [s[3],2], [s[4],2], [s[5],2], //fill-in-the-blank addition
         [s[0],0], [s[1],0], [s[2],0], [s[3],0], [s[4],0], [s[5],0], //addition
         [6,1], [6,3], [6,2], [6,0], //extra 5s-8s
         [7,1], [7,1], [7,3], [7,3], [7,2], [7,2], [7,0], [7,0], //multi-digit
