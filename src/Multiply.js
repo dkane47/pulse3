@@ -397,6 +397,7 @@ const ProblemDisplay = ({
       <p className="message-display">{message1}</p>
       <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
       </div>
+      <br></br><br></br>
       <p className="message-display">{message2}</p>
       <p className="message-display">{countdown}</p>
     </div>

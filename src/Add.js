@@ -404,9 +404,10 @@ const ProblemDisplay = ({//component that displays the meat of the app
 
   return (//display problem in three parts, then messages
     <div className="practice">
+      <p className="message-display">{message1}</p>
       <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
       </div>
-      <p className="message-display">{message1}</p>
+      <br></br><br></br>
       <p className="message-display">{message2}</p>
       <p className="message-display">{countdown}</p>
     </div>

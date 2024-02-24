@@ -390,11 +390,12 @@ const ProblemDisplay = ({
 
   return ( //problem display: problem/input and three messages
     <div className="practice">
-      <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
-      </div>
-      <p className="message-display">{message1}</p>
-      <p className="message-display">{message2}</p>
-      <p className="message-display">{countdown}</p>
+        <p className="message-display">{message1}</p>
+        <div className="problem-display">{displayEquation} <Input userAnswer={userAnswer} setUserAnswer={setUserAnswer} checkAnswer={checkAnswer} /> {result}
+        </div>
+        <br></br><br></br>
+        <p className="message-display">{message2}</p>
+        <p className="message-display">{countdown}</p>
     </div>
   );
 };
