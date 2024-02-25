@@ -10,7 +10,7 @@ function About() {
           The goal is to make progress with one fact family without being overwhelmed by too many new facts at once. </li>
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
           Visuals play an important role when students are first learning about arithmetic but they can lead to inefficient strategies while students should be committing facts to long-term memory. </li>
-          <li>Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. </li>
+          <li>Pulse doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. </li>
           <li>If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
           </li>
         </ul>
@@ -21,7 +21,7 @@ function About() {
           Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students could use some practice on. 
           Then, students do some focused practice on that fact family. 
           Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving with facts students know pretty well is more helpful than pure repetition. 
-          The target fact family is mixed with facts they answered correctly to avoid overwhelming students. 
+          The target fact family is mixed with easier facts to avoid overwhelming students. 
           For instance, if a student is working on x4s, the sequence might look like this:
           <ul>
             <li>4×5</li>
@@ -138,7 +138,7 @@ function About() {
           <li>In practice mode, half the questions are on that fact family and the other half are a mix of questions from fact families they've already seen.</li>
           <li>If students make a mistake on the first fact family they will see practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
           <li>In practice mode, if students make a mistake or answer slowly on the fact family they are working on they will see that problem again two questions later.</li>
-          <li>Problems are random but students will typically see each problem from that fact family multiple times each in a practice session to encourage successful retrieval practice.</li>
+          <li>Problems are random but students will typically see each problem from the target fact family multiple times each in a practice session to encourage successful retrieval practice.</li>
           <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
         </ul>
         <hr></hr>
@@ -147,7 +147,7 @@ function About() {
           Those later fact families seem bigger but most facts with 5s through 8s fall into one of the other families. 
           For multiplication, the fact families are x0, x1, x2, x3, x4, x5, x6/7/8, x9, x10, and x11. 
           Same thing - most 6s, 7s, and 8s are covered by one of the other fact families. 
-          If students get through all of those they will work on two digit by two digit addition, or some larger multiplication facts like x12, x25, x15, etc.
+          If students get through all of those they will work on two digit by two digit addition or larger multiplication facts like x12, x25, x15, etc.
           </p>
       </div>
       
