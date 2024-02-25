@@ -32,9 +32,10 @@ function About() {
             <li>8×10</li>
             <li>6×4</li>
             <li>5×2</li>
-            <li>5×4</li>
+            <li>4×5</li>
           </ul>
           If students don't know a fact in the target fact family they practice that fact again two questions later. 
+          Students who have stronger fact skills will see a mix of more fact families and more operations. 
         </p>
         <hr></hr>
         <h2>How does Pulse figure out if a student knows a fact?</h2>
