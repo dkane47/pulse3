@@ -77,7 +77,7 @@ function About() {
           often spend their time on a fact family they need practice with, but they might just have
           been chatting with a friend as they got started or made a silly mistake and Pulse thought they needed to practice that fact family. That's fine. 
           They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day. 
-          The order of the fact families is random, so students will see all facts over time.
+          The order of the fact families is random so students will see all facts over time.
         </p>
         <hr></hr>
         <h2>What about subtraction and division?</h2>
@@ -92,7 +92,7 @@ function About() {
         <p>My name is Dylan Kane. I'm a 7th grade math teacher in Colorado. You can get in touch at dkane47 at gmail</p>
         <hr></hr>
         <h2>How do you use Pulse with your students?</h2>
-        <p>I assign Pulse twice a week. Students do it in class before another activity on their Chromebooks. I do some progress monitoring using paper and pencil to 
+        <p>Students complete Pulse twice a week. Students do it in class before another activity on their Chromebooks. I do some progress monitoring using paper and pencil to 
           figure out which operations we should focus on. I do a fair amount of coaching, both when we first start using Pulse and as I 
           observe students working, to help them understand how to improve their recall of math facts. 
         </p>
