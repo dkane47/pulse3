@@ -5,11 +5,11 @@ function About() {
       <div className="about">
         <h2>What makes Pulse different from other math practice apps?</h2>
           <ul>
-            <li>Pulse gives students 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice to help them make steady progress toward fact fluency. 
-          The app balances repetition with facts in a single fact family and a mix of more familiar practice in each session. 
+            <li>Pulse is 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice to help students make steady progress toward fact fluency. 
+          The app balances repetition of facts in a single fact family with a mix of more familiar practice in each session. 
           The goal is to make progress with one fact family without being overwhelmed by too many new facts at once. </li>
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
-          Visuals play an important role when students are first learning about arithmetic, but they can lead to inefficient strategies while students should be committing facts to long-term memory. </li>
+          Visuals play an important role when students are first learning about arithmetic but they can lead to inefficient strategies while students should be committing facts to long-term memory. </li>
           <li>Pulse also doesn't put time pressure on students. Instead, the app uses speed as a way to figure out which facts students need more practice with. </li>
           <li>If students have trouble remembering facts or need to skip-count or use their fingers to figure out math facts, Pulse is a good tool to help them commit those facts to long-term memory. 
           </li>
@@ -69,7 +69,7 @@ function About() {
           I recommend coaching students on how to use the app for best results. 
           Students should understand that the goal is to remember math facts without having to derive them. 
           Pulse also works best for students who know a few of the easier facts. If they are just starting out, they probably need some extra support to get going. 
-          If students have a grasp of most x2 and x10 facts they are probably ready to use Pulse.
+          If students have a grasp of most x2 and x10 multiplication facts and +1 and +2 addition facts they are probably ready to use Pulse.
         </p>
         <hr></hr>
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
