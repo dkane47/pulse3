@@ -5,7 +5,7 @@ function About() {
       <div className="about">
         <h2>What makes Pulse different from other math practice apps?</h2>
           <ul>
-            <li>Pulse is 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice to help students make steady progress toward fact fluency. 
+            <li>Pulse is 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice. 
           The app balances repetition of facts in a single fact family with a mix of more familiar practice in each session. 
           The goal is to make progress with one fact family without being overwhelmed by too many new facts at once. </li>
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
@@ -15,12 +15,12 @@ function About() {
           </li>
         </ul>
         <hr></hr>
-        <h2>Why is repetition of a single fact family imortant?</h2>
+        <h2>Why is repetition of a single fact family important?</h2>
         <p>Cognitive science tells us that the best way to secure something in long-term memory is <b>retrieval practice</b>. 
           Retrieval practice means retrieving the thing from memory, not using a strategy to derive the answer. 
-          Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students could use some practice on. 
-          Then, students do some focused practice on that fact family. 
-          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving with facts students know pretty well is more helpful than pure repetition. 
+          Pulse is designed to help students retrieve facts from memory. First, the app figures out a fact family students could use some practice with. 
+          Then, students do some focused practice with that fact family. 
+          Focused repetition on one fact family helps students to practice retrieving those facts successfully, and interleaving with other facts is more helpful than pure repetition. 
           The target fact family is mixed with easier facts to avoid overwhelming students. 
           For instance, if a student is working on x4s, the sequence might look like this:
           <ul>
@@ -76,9 +76,9 @@ function About() {
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
         <p>That will happen. Pulse is probabibilistic. Students will 
           often spend their time on a fact family they need practice with, but they might just have
-          been chatting with a friend as they got started or made a silly mistake and Pulse thought they needed to practice that fact family. That's fine. 
-          They will practice that fact family mixed with a few others, and it's still good practice even if it's not perfectly targeted that day. 
-          The order of the fact families is random so students will see all facts over time.
+          been chatting with a friend as they got started or made a silly mistake and the algorithm thought they needed to practice that fact family. That's fine. 
+          They will practice that fact family mixed with a few others. It's still good practice even if it's not perfectly targeted that day. 
+          The order of the fact families is random so students will see all facts eventually over time.
         </p>
         <hr></hr>
         <h2>What about subtraction and division?</h2>
@@ -120,7 +120,7 @@ function About() {
         <h2>Why not make it a game?</h2>
         <p>Practice is important. I don't think it's helpful to pretend that practice is a game. 
           We should be honest with students that practice is an important part of learning. 
-          Pulse is short, tyically 2-4 minutes per day, and I have no issue asking students to do a bit of practice to sharpen their math skills.
+          Pulse is short, tyically 2-4 minutes per day, and I have no issue asking students to do a bit of regular practice to sharpen their math skills.
         </p>
         <hr></hr>
         <h2>Can you give a more detailed description of how Pulse works?</h2>
