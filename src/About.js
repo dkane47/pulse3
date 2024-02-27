@@ -57,6 +57,13 @@ function About() {
         If your experience is like mine, even after students understand the operations they need more practice to commit facts to long-term memory. That's what Pulse is designed for.
         </p>
         <hr></hr>
+        <h2>Should students who already know most of their math facts use Pulse?</h2>
+        <p>I assign Pulse to all of my students. It's much easier to ask everyone to do it than to try to figure out who does and doesn't need it. 
+          Students who already know most of their facts will see a mix of operations and facts getting steadily more difficult. 
+          It's pretty hard to get to the end! I'm a math teacher and designed this thing and I usually can't get to the end without triggering practice mode. 
+          Pulse has plenty of good challenges for students who already have strong fluency. 
+        </p>
+        <hr></hr>
         <h2>Is there research that supports Pulse?</h2>
         <p>Pulse is informed by research on retrieval practice, incremental rehearsal, and interleaving. 
           Research hasn't found the perfect way to teach multiplication facts. Reasonable people disagree about the best way to structure fact practice based on research. 
@@ -93,28 +100,35 @@ function About() {
         <p>My name is Dylan Kane. I'm a 7th grade math teacher in Colorado. You can get in touch at dkane47 at gmail</p>
         <hr></hr>
         <h2>How do you use Pulse with your students?</h2>
-        <p>Students complete Pulse twice a week. Students do it in class before another activity on their Chromebooks. I do some progress monitoring using paper and pencil to 
+        <p>Students complete Pulse twice a week. They do it in class before another activity on their Chromebooks. I do some progress monitoring using paper and pencil to 
           figure out which operations we should focus on. I do a fair amount of coaching, both when we first start using Pulse and as I 
           observe students working, to help them understand how to improve their recall of math facts. 
         </p>
         <hr></hr>
         <h2>What should I do to help my students use Pulse effectively?</h2>
-        <p>Help them understand that they should try to answer as fast as they can, but if they can't remember a fact that's fine. 
+        <p>Help students understand that they should try to answer as fast as they can, but if they can't remember a fact that's fine. 
           They'll get some focused practice on that fact and similar facts. Help students understand that, if they get facts in their 
           target fact family wrong or answer slowly, that fact will repeat two problems later. That's a great chance to practice remembering it! 
-          Also, make sure students aren't just hitting enter and copying answers every time. 
+        </p>
+        <hr></hr>
+        <h2>What if students just hit enter to see the answer and copy it?</h2>
+        <p>That happens sometimes. It's often because the student doesn't know the answer. 
+          It's ok for students to hit enter to see the answer if they don't know a fact. 
+          The repetition in Pulse means that students generally realize it's easier to just answer the questions when they know the answer. 
+          That's another thing some students can use coaching with.
         </p>
         <hr></hr>
         <h2>What should I do to help students who don't make progress?</h2>
         <p>Teach them! Pulse is a good tool for practice once students have a decent foundation. 
           Pulse is not a substitute for teaching. 
           If students aren't making progress, help them see patterns in the fact families they are often working on. 
+          Figure out the facts they know and build on that foundation. 
         </p>
         <hr></hr>
         <h2>Why not have students sign in and track their progress?</h2>
         <p>I prefer a tool that is simple to use. I can see what students are working on by walking around and looking at their screens. 
           Students don't always make nice linear progress in their fact knowledge and lots of apps that track progress can be misleading or move on too soon. 
-          I don't find that tracking progress on this type of practice is very helpful.
+          I don't find it helpful to track progress on this type of practice.
         </p>
         <hr></hr>
         <h2>Why not make it a game?</h2>
@@ -136,7 +150,7 @@ function About() {
           <li>Students have 3.5 seconds to answer each question for the first operation, though there's no visible timer on the screen. This time decreases slowly as they move through more operations</li>
           <li>If students get a question wrong or answer slowly they switch to practice mode for that fact family.</li>
           <li>In practice mode, half the questions are on that fact family and the other half are a mix of questions from fact families they've already seen.</li>
-          <li>If students make a mistake on the first fact family they will see practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
+          <li>If students make a mistake on the first fact family they see, then they will practice from a few fact families they are likely to know. These are x0, x1, x2, and x10 for multiplication and +0, +1, and +2 for addition. </li>
           <li>In practice mode, if students make a mistake or answer slowly on the fact family they are working on they will see that problem again two questions later.</li>
           <li>Problems are random but students will typically see each problem from the target fact family multiple times each in a practice session to encourage successful retrieval practice.</li>
           <li>After 45 problems, students will see a message saying "Nice! You're done for today." That's it!</li>
