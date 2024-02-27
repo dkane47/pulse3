@@ -429,6 +429,7 @@ const Input = ({ userAnswer, setUserAnswer, checkAnswer }) => {
     <div>
       <input
         type="number"
+        keyboardType="numeric"
         value={userAnswer}
         onChange={handleInputChange} // Handle the onChange event
         onKeyPress={handleKeyPress} // Trigger handleKeyPress on key press
