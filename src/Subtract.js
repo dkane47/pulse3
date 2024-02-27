@@ -364,7 +364,7 @@ const Subtract = () => {
 
 const Introduction = ({ onReadyClick }) => { //introduction page with start button
   return (
-    <div className="container intro">
+    <div className="intro">
       <h1>Welcome to Pulse: Subtraction</h1>
       <p>Solve each problem, then press Enter</p>
       <button className="ready-btn" onClick={onReadyClick}>Ready?</button>

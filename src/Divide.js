@@ -352,7 +352,7 @@ const Divide = () => {
 
 const Introduction = ({ onReadyClick }) => {
   return (
-    <div className="container intro">
+    <div className="intro">
       <h1>Welcome to Pulse: Division</h1>
       <p>Solve each problem, then press Enter</p>
       <button className="ready-btn" onClick={onReadyClick}>Ready?</button>
