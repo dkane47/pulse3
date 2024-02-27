@@ -3,9 +3,13 @@ import React from 'react';
 function About() {
     return (
       <div className="about">
+        <h2>What is Pulse</h2>
+        <p>Pulse is 45 questions of math fact practice a day to help students improve their fact fluency.
+        </p>
+        <hr></hr>
         <h2>What makes Pulse different from other math practice apps?</h2>
           <ul>
-            <li>Pulse is 45 questions of math fact practice a day. It is designed to be a short, focused, and manageable chunk of practice. 
+            <li>Pulse is designed to be a short, focused, and manageable chunk of practice. 
           The app balances repetition of facts in a single fact family with a mix of more familiar practice in each session. 
           The goal is to make progress with one fact family without being overwhelmed by too many new facts at once. </li>
           <li>Pulse doesn't use visuals or other representations of arithmetic. 
@@ -60,7 +64,7 @@ function About() {
         <h2>Should students who already know most of their math facts use Pulse?</h2>
         <p>I assign Pulse to all of my students. It's much easier to ask everyone to do it than to try to figure out who does and doesn't need it. 
           Students who already know most of their facts will see a mix of operations and facts getting steadily more difficult. 
-          It's pretty hard to get to the end! I'm a math teacher and designed this thing and I usually can't get to the end without triggering practice mode. 
+          It's pretty hard to get to the end without making a mistake! I'm a math teacher and designed this thing and I usually can't get to the end without triggering practice mode. 
           Pulse has plenty of good challenges for students who already have strong fluency. 
         </p>
         <hr></hr>

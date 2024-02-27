@@ -30,7 +30,7 @@ code {
 @media (max-width: 768px) { /* Adjust breakpoint as needed */
   .app {
     justify-content: flex-start; /* Change justify-content on mobile */
-    margin: 30px; /* Add margin on mobile */
+    margin: 150px; /* Add margin on mobile */
   }
 }
 
