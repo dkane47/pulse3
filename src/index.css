@@ -30,7 +30,7 @@ code {
 @media (max-width: 768px) { /* Adjust breakpoint as needed */
   .app {
     justify-content: flex-start; /* Change justify-content on mobile */
-    margin-top: 100px;
+    margin-top: 10vh;
   }
 }
 
@@ -132,7 +132,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 3rem;
   letter-spacing: 0.2em;
   position: absolute;
-  top: 15%;
+  top: 7%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation: fadeOut 2s ease-out forwards; /* Fade-out animation */
