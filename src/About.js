@@ -85,7 +85,7 @@ function About() {
         </p>
         <hr></hr>
         <h2>Sometimes students end up working on facts they already know, what's up with that?</h2>
-        <p>That will happen. Pulse is probabibilistic. Students will 
+        <p>That will happen. Pulse is probabilistic. Students will 
           often spend their time on a fact family they need practice with, but they might have
           been chatting with a friend as they got started or made a silly mistake and the algorithm thought they needed to practice that fact family. That's fine. 
           They will practice that fact family mixed with a few others. It's still good practice even if it's not perfectly targeted that day. 
@@ -131,14 +131,14 @@ function About() {
         <hr></hr>
         <h2>Why not have students sign in and track their progress?</h2>
         <p>I prefer a tool that is simple to use. I can see what students are working on by walking around and looking at their screens. 
-          Students don't always make nice linear progress in their fact knowledge and lots of apps that track progress can be misleading or move on too soon. 
+          Students don't always make nice linear progress in their fact knowledge and many apps that track progress can be misleading or move on too soon. 
           I don't find it helpful to track progress on this type of practice.
         </p>
         <hr></hr>
         <h2>Why not make it a game?</h2>
         <p>Practice is important. I don't think it's helpful to pretend that practice is a game. 
           We should be honest with students that practice is an important part of learning. 
-          Pulse is short, tyically 2-4 minutes per day, and I have no issue asking students to do a bit of regular practice to sharpen their math skills.
+          Pulse is short, typically 2-4 minutes per day, and I have no issue asking students to do a bit of regular practice to sharpen their math skills.
         </p>
         <hr></hr>
         <h2>Can you give a more detailed description of how Pulse works?</h2>
