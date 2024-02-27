@@ -53,7 +53,7 @@ code {
 
 @media (max-width: 768px) { /* Adjust the breakpoint as needed */
   .intro h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 
