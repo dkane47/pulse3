@@ -165,7 +165,7 @@ function About() {
           Those later fact families seem bigger but most facts with 5s through 8s fall into one of the other families. 
           For multiplication the fact families are x0, x1, x2, x3, x4, x5, x6/7/8, x9, x10, and x11. 
           Same thing - most 6s, 7s, and 8s are covered by one of the other fact families. 
-          If students get through all of those they will work on two digit by two digit addition or larger multiplication facts like x12, x25, x15, etc.
+          If students get through all of those they will work on two digit by two digit addition/subtraction or larger multiplication facts like x12, x25, x15, etc.
           </p>
       </div>
       
