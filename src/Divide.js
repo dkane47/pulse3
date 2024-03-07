@@ -122,8 +122,8 @@ const Divide = () => {
       newNum2 = Math.floor(Math.random() * 9 + 2);
     } else if (newNum1 === 11) { //11 x 2-9
       newNum2 = Math.floor(Math.random() * 8 + 2);
-    } else { //2-10 for all others
-      newNum2 = Math.floor(Math.random() * 9 + 2);
+    } else { //2-9 for all others
+      newNum2 = Math.floor(Math.random() * 8 + 2);
     }
     
     // if there is a held problem, set the problem to the held problem
