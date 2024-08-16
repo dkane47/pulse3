@@ -6,6 +6,7 @@ import Add from './Add';
 import Subtract from './Subtract';
 import Multiply from './Multiply';
 import Divide from './Divide';
+import Intro from './Intro';
 import About from './About';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/subtract" element={<Subtract />} />
         <Route path="/multiply" element={<Multiply />} />
         <Route path="/divide" element={<Divide />} />
+        <Route path="/intro" element={<Intro />} />
         <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
