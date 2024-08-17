@@ -59,14 +59,14 @@ const Intro = () => {
   const [timeToTarget, setTimeToTarget] = React.useState(4000); //default time for an answer to count as "fast"
 
   React.useEffect(() => {
-    let numbers = [2,5,10,3]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
+    let numbers = [2,5,10]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
     let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
     setLogic((prevLogic) => ({ //use random list to generate a random sequence of problems
       ...prevLogic,
-      sequence: [[s[0],0], [s[1],0], [s[2],0], [s[3],0],  //multiplication
-      [s[0],1], [s[1],1], [s[2],1], [s[3],1],   //division
-      [s[0],2], [s[1],2], [s[2],2], [s[3],2],  //fill-in-the-blank multiplication
-      [s[0],3], [s[1],3], [s[2],3], [s[3],3],  //division
+      sequence: [[s[0],0], [s[1],0], [s[2],0], [3,0],  //multiplication
+      [s[0],1], [s[1],1], [s[2],1], [3,1],   //division
+      [s[0],2], [s[1],2], [s[2],2], [3,2],  //fill-in-the-blank multiplication
+      [s[0],3], [s[1],3], [s[2],3], [3,3],  //division
       [4,0], [6,1], [9,2], [11,3],  //random mix of operations
       [4,0], [6,1], [9,2], [11,3],  
       [4,0], [6,1], [9,2], [11,3],  
