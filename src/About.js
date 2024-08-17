@@ -81,6 +81,7 @@ function About() {
           I recommend coaching students on how to use the app for best results. 
           Students should understand that the goal is to remember math facts without having to derive them. 
           Pulse also works best for students who know a few of the easier facts. If they are just starting out, they probably need some extra support to get going. 
+          There is also an introductory version of Pulse at <a href="/intro">pulsemath.com/intro</a> that focuses on 2s, 5s, and 10s that is helpful for students who know very few multiplication facts. 
           If students have a grasp of most x2 and x10 multiplication facts and +1 and +2 addition facts they are probably ready to use Pulse.
         </p>
         <hr></hr>
