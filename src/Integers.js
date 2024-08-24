@@ -416,8 +416,11 @@ const ProblemDisplay = ({
   } else if (operation === 1) {
     displayEquation = `${num1} × ${num2} = `;
     result = '';
-  } else if (operation === 2) {
-    displayEquation = `${num1} — ${num2} = `;
+  } else if (operation === 2 && num2 < 0) {
+    displayEquation = `${num1} – (${num2}) = `;
+    result = '';
+  } else {
+    displayEquation = `${num1} – ${num2} = `;
     result = '';
   } 
 
