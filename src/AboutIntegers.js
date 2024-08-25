@@ -18,15 +18,15 @@ function AboutIntegers() {
         </p>
         <hr></hr>
         <h2>When are students ready for it?</h2>
-        <p>Pulse is 45 questions of math fact practice to help students improve their fact fluency.
+        <p>
         </p>
         <hr></hr>
         <h2>More details?</h2>
-        <p>Pulse is 45 questions of math fact practice to help students improve their fact fluency.
+        <p>
         </p>
         <hr></hr>
         <h2>Is it finished?</h2>
-        <p>Pulse is 45 questions of math fact practice to help students improve their fact fluency.
+        <p>
         </p>
         <hr></hr>
       </div>

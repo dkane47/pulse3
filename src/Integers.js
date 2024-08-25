@@ -144,8 +144,8 @@ const Integers = () => {
       newNum1 = Math.floor(Math.random() * 5 - 6);
       newNum2 = Math.floor(Math.random() * 5 + 1);
     } else if (newNum1 === 25) { //pos - pos
-      newNum1 = Math.floor(Math.random() * 5 + 1);
-      newNum2 = Math.floor(Math.random() * 7 + 1);
+      newNum1 = Math.floor(Math.random() * 3 + 1);
+      newNum2 = Math.floor(Math.random() * 8 + 1);
     } else if (newNum1 === 26) { //pos - neg
       newNum1 = Math.floor(Math.random() * 5 + 1);
       newNum2 = Math.floor(Math.random() * 5 - 6);
@@ -253,7 +253,7 @@ const Integers = () => {
     } else if (target[0] === 24) {
       opArray = [[21,2],[22,2],[23,2],[1,0],[2,0],[25,2]]
     } else if (target[0] === 25) {
-      opArray = [[21,2],[22,2],[23,2],[1,0],[2,0],[24,2]]
+      opArray = [[6,0],[22,2],[23,2],[1,0],[2,0],[24,2]]
     } else if (target[0] === 26) {
       opArray = [[21,2],[25,2],[23,2],[1,0],[2,0],[25,2]]
     } else if (target[0] === 27) {
