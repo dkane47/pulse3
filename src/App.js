@@ -9,6 +9,7 @@ import Divide from './Divide';
 import Intro from './Intro';
 import Integers from './Integers';
 import About from './About';
+import AboutIntegers from './AboutIntegers';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/intro" element={<Intro />} />
         <Route path="/integers" element={<Integers />} />
         <Route path="/about" element={<About />} />
+        <Route path="/about-int" element={<AboutIntegers />} />
       </Routes>
     </BrowserRouter>
   );

@@ -144,7 +144,7 @@ const Integers = () => {
       newNum1 = Math.floor(Math.random() * 5 - 6);
       newNum2 = Math.floor(Math.random() * 5 + 1);
     } else if (newNum1 === 25) { //pos - pos
-      newNum1 = Math.floor(Math.random() * 7 + 1);
+      newNum1 = Math.floor(Math.random() * 5 + 1);
       newNum2 = Math.floor(Math.random() * 7 + 1);
     } else if (newNum1 === 26) { //pos - neg
       newNum1 = Math.floor(Math.random() * 5 + 1);
@@ -259,15 +259,15 @@ const Integers = () => {
     } else if (target[0] === 27) {
       opArray = [[21,2],[25,2],[23,2],[1,0],[2,0],[25,2]]
     } else if (target[0] === 16) {
-      opArray = [[17,1],[6,0],[10,1],[12,1],[15,1],[5,0]]
+      opArray = [[17,1],[13,1],[10,1],[12,1],[15,1],[5,0]]
     } else if (target[0] === 17) {
-      opArray = [[16,1],[6,0],[10,1],[12,1],[15,1],[6,0]]
+      opArray = [[16,1],[6,0],[10,1],[12,1],[15,1],[13,1]]
     }
 
     let newArray = [];
     for (let i = 0; i < 47; i++) {
       const solvedProblems = [...logic.sequence].slice(0, logic.step); //pull problems solved so far
-      const problems = [...solvedProblems,...opArray,target,target,target,target,target,target] //append 2s, 10s, 1s, 0s
+      const problems = [...solvedProblems,...opArray,target,target,target,target,target,target, target, target, target] //append 2s, 10s, 1s, 0s
       const randomIndex = Math.floor(Math.random() * problems.length); 
       newArray.push(problems[randomIndex]); //mix those last two groups
     }
