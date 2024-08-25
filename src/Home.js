@@ -15,6 +15,11 @@ function Home() {
               Multiplication
           </button>
         </div>
+        <div className="button-container">
+          <button className="launch-btn" onClick={() => navigate('/integers')}>
+            Integers
+          </button>
+        </div>
         <h2>Want to learn more about Pulse?</h2>
         <button className="launch-btn" onClick={() => navigate('/about')}>
             About
