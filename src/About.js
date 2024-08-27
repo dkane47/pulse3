@@ -93,9 +93,9 @@ function About() {
           The order of the fact families is random so students will see all facts eventually over time.
         </p>
         <hr></hr>
-        <h2>What about negative numbers</h2>
+        <h2>What about negative numbers?</h2>
         <p>
-          There's Pulse for integers <a href="/integers">here</a>here, and an about page for the integers practice <a href="/about-int">here</a>. 
+          There's Pulse for integers <a href="/integers">here</a>, and an about page for the integers practice <a href="/about-int">here</a>. 
         </p>
         <hr></hr>
         <h2>What about subtraction and division?</h2>
