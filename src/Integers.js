@@ -69,7 +69,7 @@ const Integers = () => {
   }, []);
   
   React.useEffect(() => { //function for level up and timeToTarget adjustments
-    if (logic.step % 4 === 0 && logic.step > 1 && logic.step < 18 && !displaySettings.switched) { //level up logic
+    if (logic.step % 4 === 0 && logic.step > 18 && logic.step < 18 && !displaySettings.switched) { //level up logic
       setIsLevelUpVisible(true); // Make the Level Up message visible
     } else {
       setIsLevelUpVisible(false); // Turn off
