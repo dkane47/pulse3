@@ -267,7 +267,7 @@ const Integers = () => {
     let newArray = [];
     for (let i = 0; i < 47; i++) {
       const solvedProblems = [...logic.sequence].slice(0, logic.step); //pull problems solved so far
-      const problems = [...solvedProblems,...opArray,target,target,target,target,target,target, target, target, target] //append 2s, 10s, 1s, 0s
+      const problems = [...solvedProblems.slice(0,4),...opArray,target,target,target,target,target,target, target, target, target] //append 2s, 10s, 1s, 0s
       const randomIndex = Math.floor(Math.random() * problems.length); 
       newArray.push(problems[randomIndex]); //mix those last two groups
     }
