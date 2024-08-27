@@ -10,7 +10,7 @@ function AboutIntegers() {
         <hr></hr>
         <h2>How does the integers practice work?</h2>
         <p>The basic premise is similar to the other Pulse practice pages. 
-          Integer operations are divided into problem types like "positive + negative" or "negative times negative" or "positive minus positive." 
+          Integer operations are divided into problem types like "positive plus negative" or "negative times negative" or "positive minus positive." 
           All of the possibilities for addition, subtraction, and multiplication are mixed together randomly to start, with a bit more emphasis on addition and multiplication. 
           Once a student either makes a mistake or answers a question slowly, they get focused practice on that problem type. 
           Unlike the other pages, each problem type gets a random mix that is unique to that type. 
