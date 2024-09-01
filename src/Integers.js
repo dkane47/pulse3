@@ -93,7 +93,8 @@ const Integers = () => {
     // generate second number randomly with some logic based on size
     let newNum2;
     if (newNum1 === 1) { //1 +1
-      newNum2 = Math.floor(Math.random() * 8 + 2);
+      newNum1 = Math.floor(Math.random() * 10 + 1);
+      newNum2 = Math.floor(Math.random() * 9 + 2);
     } else if (newNum1 === 2) { //2 +2
       newNum2 = Math.floor(Math.random() * 7 + 3);
     } else if (newNum1 === 3) { //4 +double
@@ -245,19 +246,19 @@ const Integers = () => {
     // build array mixing target family with mixed practice
     let opArray = [[1,0],[2,0],[10,1],[2,1]];
     if (target[0] === 5) {
-      opArray = [[6,0],[16,1],[1,0],[2,0],[3,0],[4,0]]
+      opArray = [[6,0],[16,1],[1,0],[1,0],[1,0],[23,2]]
     } else if (target[0] === 6) {
-      opArray = [[5,0],[17,1],[1,0],[2,0],[3,0],[4,0]]
+      opArray = [[5,0],[17,1],[1,0],[1,0],[23,2],[23,2]]
     } else if (target[0] === 7) {
-      opArray = [[5,0],[16,1],[17,1],[6,0],[3,0],[4,0]]
+      opArray = [[5,0],[16,1],[6,0],[1,0],[1,0],[23,2]]
     } else if (target[0] === 24) {
-      opArray = [[21,2],[22,2],[23,2],[1,0],[2,0],[25,2]]
+      opArray = [[21,2],[22,2],[23,2],[1,0],[1,0],[25,2]]
     } else if (target[0] === 25) {
-      opArray = [[6,0],[22,2],[23,2],[1,0],[2,0],[24,2]]
+      opArray = [[6,0],[22,2],[23,2],[1,0],[1,0],[24,2]]
     } else if (target[0] === 26) {
-      opArray = [[21,2],[25,2],[23,2],[1,0],[2,0],[25,2]]
+      opArray = [[21,2],[25,2],[23,2],[1,0],[1,0],[25,2]]
     } else if (target[0] === 27) {
-      opArray = [[21,2],[25,2],[23,2],[1,0],[2,0],[25,2]]
+      opArray = [[21,2],[25,2],[23,2],[1,0],[1,0],[25,2]]
     } else if (target[0] === 16) {
       opArray = [[17,1],[13,1],[10,1],[12,1],[15,1],[5,0]]
     } else if (target[0] === 17) {

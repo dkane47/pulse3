@@ -9,10 +9,10 @@ function AboutIntegers() {
         </p>
         <hr></hr>
         <h2>How does the integers practice work?</h2>
-        <p>The basic premise is similar to the other Pulse practice pages. 
+        <p>The premise is similar to the other Pulse practice pages. 
           Integer operations are divided into problem types like "positive plus negative" or "negative times negative" or "positive minus positive." 
           All of the possibilities for addition, subtraction, and multiplication are mixed together randomly to start, with a bit more emphasis on addition and multiplication. 
-          Once a student either makes a mistake or answers a question slowly they get focused practice on that problem type. 
+          Once a student either makes a mistake or answers a question slowly they see focused practice on that problem type. 
           Each problem type gets a random mix that is unique to that type. 
           For instance, if the student makes a mistake on a "negative times negative" fact, here's the mix they will see: 
           Most problems will either be negative times negative or positive times positive, to practice the target skill while mixing in easier problems. 
@@ -37,20 +37,20 @@ function AboutIntegers() {
           Help students understand the value of practice! 
           Students should also understand that Pulse tries to figure out a problem type to focus on based on either wrong answers or slow answers. 
           Wrong and slow answers are signs that the student can benefit from more practice with that problem type. 
-          Students should answer as fast as they can, but shouldn't stress if they have trouble with a problem - they'll get more practice with it, and Pulse is always 45 problems.
+          Students should answer as fast as they can, but shouldn't stress if they have trouble with a problem.
+          They'll get more practice with it, and Pulse is always 45 problems.
         </p>
         <hr></hr>
         <h2>Anything else teachers should think about?</h2>
         <p>
           Be thoughtful about whether students are ready for this type of practice. 
-          If a lot of students are getting frustrated, they probably need practice with more teacher support or scaffolding. 
+          If a lot of students are getting frustrated they probably need practice with more teacher support or scaffolding. 
           Fact practice for positive numbers is simpler than integers. 
           Research suggests that a large majority of students conceptually understand addition and multiplication. 
           Once they have that conceptual foundation, they still have a few hundred basic math facts to commit to memory. 
           That's where online tools can be helpful. But with integer operations, the conceptual understanding is harder and there are fewer problem types to remember. 
           Pulse is a good option as long as most students have a strong foundation. If they don't, they probably won't make much progress with this type of practice. 
         </p>
-        <hr></hr>
       </div>
       
     );
