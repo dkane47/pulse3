@@ -54,7 +54,7 @@ const Integers = () => {
   const [timeToTarget, setTimeToTarget] = React.useState(5000); //default time for an answer to count as "fast"
 
   React.useEffect(() => {
-    let numbers = [[5,0],[6,0],[7,0],[5,0],[6,0],[7,0],[16,1],[17,1],[16,1],[17,1],[16,1],[17,1],[24,2],[25,2],[26,2],[27,2]]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
+    let numbers = [[5,0],[6,0],[7,0],[5,0],[6,0],[6,0],[16,1],[17,1],[16,1],[17,1],[16,1],[17,1],[24,2],[25,2],[26,2],[27,2]]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
     let s = numbers.slice().sort(() => Math.random() - 0.5); //randomize list above
     setLogic((prevLogic) => ({ //use random list to generate a random sequence of problems
       ...prevLogic,
