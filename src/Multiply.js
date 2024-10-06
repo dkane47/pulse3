@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import './App.css';
 
 
@@ -323,7 +324,12 @@ const Multiply = () => {
   };
 
   return (
-    <div className="app" id="app"> 
+    <div className="app" id="app">
+      <Helmet>
+        <title>Pulse Multiplication</title>
+        <meta name="Pulse Multiplication" content="Evidence-based multiplication fact practice" />
+        <meta name="keywords" content="evidence, facts, math, fluency, multiplication, practice, about, pulse" />
+      </Helmet> 
       {isLevelUpVisible && ( /* logic for level up message*/ 
         <div className="level-up-message">
           Level Up!

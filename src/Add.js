@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import './App.css';
 
 /** 
@@ -333,6 +334,11 @@ const Add = () => {
 
   return (
     <div className="app" id="app">
+      <Helmet>
+        <title>Pulse Addition</title>
+        <meta name="Pulse Addition" content="Evidence-based multiplication fact practice" />
+        <meta name="keywords" content="evidence, facts, math, fluency, addition, practice, about, pulse" />
+      </Helmet>
       {isLevelUpVisible && (//level up message
         <div className="level-up-message">
           Level Up!

@@ -1,8 +1,14 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 
 function About() {
     return (
       <div className="about">
+        <Helmet>
+        <title>About Pulse</title>
+          <meta name="About" content="About Pulse Math" />
+          <meta name="keywords" content="evidence, facts, math, fluency, practice, about, pulse" />
+        </Helmet>
         <h2>What is Pulse?</h2>
         <p>Pulse is 45 questions of math fact practice to help students improve their fact fluency.
         </p>
