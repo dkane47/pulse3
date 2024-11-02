@@ -24,6 +24,7 @@ function App() {
         <Route path="/integers" element={<Integers />} />
         <Route path="/about" element={<About />} />
         <Route path="/about-int" element={<AboutIntegers />} />
+        <Route path='*' element={<Home/>} />
       </Routes>
     </BrowserRouter>
   );

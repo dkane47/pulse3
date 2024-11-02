@@ -5,7 +5,7 @@ function About() {
     return (
       <div className="about">
         <Helmet>
-        <title>About Pulse</title>
+          <title>About Pulse</title>
           <meta name="About" content="About Pulse Math" />
           <meta name="keywords" content="evidence, facts, math, fluency, practice, about, pulse" />
         </Helmet>
