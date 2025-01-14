@@ -51,7 +51,7 @@ const Integers = () => {
   
   const [isLevelUpVisible, setIsLevelUpVisible] = React.useState(false); //whether to dispaly level up message
 
-  const [timeToTarget, setTimeToTarget] = React.useState(5000); //default time for an answer to count as "fast"
+  const [timeToTarget, setTimeToTarget] = React.useState(6000); //default time for an answer to count as "fast"
 
   React.useEffect(() => {
     let numbers = [[5,0],[6,0],[7,0],[5,0],[6,0],[6,0],[16,1],[17,1],[16,1],[17,1],[16,1],[17,1],[24,2],[25,2],[26,2],[27,2]]; //list of fact families for practice. 6 represents 6s, 7s, and 8s, and 0 and 1 are mixed in during practice mode
