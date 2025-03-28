@@ -7,6 +7,7 @@ import Subtract from './Subtract';
 import Multiply from './Multiply';
 import Divide from './Divide';
 import Intro from './Intro';
+import Intro2 from './Intro2';
 import Integers from './Integers';
 import About from './About';
 import AboutIntegers from './AboutIntegers';
@@ -21,6 +22,7 @@ function App() {
         <Route path="/multiply" element={<Multiply />} />
         <Route path="/divide" element={<Divide />} />
         <Route path="/intro" element={<Intro />} />
+        <Route path="/intro2" element={<Intro2 />} />
         <Route path="/integers" element={<Integers />} />
         <Route path="/about" element={<About />} />
         <Route path="/about-int" element={<AboutIntegers />} />
